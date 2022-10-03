@@ -7,15 +7,26 @@ Basic & advanced practice of :
 - TDD (Test Driven Development) - `PHPUnit`
 - BDD (Behavior Driven Development) - `Behat`
 - Code analysis - `PHPStan` & `PHP CS Fixer`.
+  
+With a blank `Symfony` project to practice them.
 
 Dev Env
 --------
 - `Symfony 6.1` (traditional web app skeleton)
 - `PHP 8.1`
+- `Docker`
 - `PHPUnit 9.5`
 - `PHPStan 1.8`
 - `Behat 3.11`
 - `PHP CS Fixer 3.11`
+
+Commands
+--------
+Check the [Makefile](Makefile) directly or run `make help` into a bash.
+
+On Windows systems you must install `make` with [choco](https://community.chocolatey.org/packages/make#install) before using it. [Instructions](https://chocolatey.org/install) to install it very quickly.
+
+To display the `make help` correctly, you need to use a bash (linux based). So under Windows OS, ZSH or GitBash for e.g. are recommended. 
 
 Documentations
 --------------
