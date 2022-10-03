@@ -4,9 +4,9 @@ PHP tests & code analysis
 Intention
 ----------
 Basic & advanced practice of :
-- TDD (Test Driven Development) - PHPUnit
-- BDD (Behavior Driven Development -Behat
-- Code analysis (PHPStan & PHP CS Fixer).
+- TDD (Test Driven Development) - `PHPUnit`
+- BDD (Behavior Driven Development) - `Behat`
+- Code analysis - `PHPStan` & `PHP CS Fixer`.
 
 Dev Env
 --------
