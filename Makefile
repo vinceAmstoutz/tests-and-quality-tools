@@ -76,11 +76,7 @@ build: ## Builds the images
 down: ## Stop the docker hub
 	$(DOCKER_COMP) down --remove-orphans
 
-check: ## Docker check
-	@$(DOCKER) info > /dev/null 2>&1                                                                   # Docker is up
-	@test '"healthy"' = `$(DOCKER) inspect --format "{{json .State.Health.Status }}" strangebuzz-db-1` # Db container is up and healthy
-
-sh: ## Log to the docker container
+sh: ## Log into the docker container
 	@$(DOCKER_COMP) exec php sh
 
 logs: ## Show live logs

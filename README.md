@@ -14,7 +14,7 @@ Dev Env
 --------
 - `Symfony 6.1` (traditional web app skeleton)
 - `PHP 8.1`
-- `Docker`
+- `Docker` 
 - `PHPUnit 9.5`
 - `PHPStan 1.8`
 - `Behat 3.11`
@@ -30,6 +30,9 @@ To display the `make help` correctly, you need to use a bash (linux based). So u
 
 Documentations
 --------------
+Docker integration (with caddy server)
+- https://github.com/dunglas/symfony-docker#docs 
+
 PHPUnit
 - https://symfony.com/doc/current/testing.html
 - https://phpunit.readthedocs.io/en/9.5/installation.html
