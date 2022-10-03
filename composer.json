@@ -1,5 +1,6 @@
 {
     "type": "project",
+    "description": "Practice of TDD (PHPUnit), BDD (Behat) and code analysis (PHPStan & PHP CS Fixer).",
     "license": "proprietary",
     "minimum-stability": "stable",
     "prefer-stable": true,
