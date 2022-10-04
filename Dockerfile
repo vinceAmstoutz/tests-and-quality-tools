@@ -24,41 +24,41 @@ WORKDIR /srv/app
 
 # persistent / runtime deps
 RUN apk add --no-cache \
-		acl \
-		fcgi \
-		file \
-		gettext \
-		git \
+	acl \
+	fcgi \
+	file \
+	gettext \
+	git \
 	;
 
 RUN set -eux; \
 	apk add --no-cache --virtual .build-deps \
-		$PHPIZE_DEPS \
-		icu-data-full \
-		icu-dev \
-		libzip-dev \
-		zlib-dev \
+	$PHPIZE_DEPS \
+	icu-data-full \
+	icu-dev \
+	libzip-dev \
+	zlib-dev \
 	; \
 	\
 	docker-php-ext-configure zip; \
 	docker-php-ext-install -j$(nproc) \
-		intl \
-		zip \
+	intl \
+	zip \
 	; \
 	pecl install \
-		apcu \
+	apcu \
 	; \
 	pecl clear-cache; \
 	docker-php-ext-enable \
-		apcu \
-		opcache \
+	apcu \
+	opcache \
 	; \
 	\
 	runDeps="$( \
-		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local/lib/php/extensions \
-			| tr ',' '\n' \
-			| sort -u \
-			| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' \
+	scanelf --needed --nobanner --format '%n#p' --recursive /usr/local/lib/php/extensions \
+	| tr ',' '\n' \
+	| sort -u \
+	| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' \
 	)"; \
 	apk add --no-cache --virtual .app-phpexts-rundeps $runDeps; \
 	\
@@ -100,10 +100,10 @@ COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 # prevent the reinstallation of vendors at every changes in the source code
 COPY composer.* symfony.* ./
 RUN set -eux; \
-    if [ -f composer.json ]; then \
-		composer install --prefer-dist --no-dev --no-autoloader --no-scripts --no-progress; \
-		composer clear-cache; \
-    fi
+	if [ -f composer.json ]; then \
+	composer install --prefer-dist --no-dev --no-autoloader --no-scripts --no-progress; \
+	composer clear-cache; \
+	fi
 
 # copy sources
 COPY . .
@@ -111,12 +111,12 @@ RUN rm -Rf docker/
 
 RUN set -eux; \
 	mkdir -p var/cache var/log; \
-    if [ -f composer.json ]; then \
-		composer dump-autoload --classmap-authoritative --no-dev; \
-		composer dump-env prod; \
-		composer run-script --no-dev post-install-cmd; \
-		chmod +x bin/console; sync; \
-    fi
+	if [ -f composer.json ]; then \
+	composer dump-autoload --classmap-authoritative --no-dev; \
+	composer dump-env prod; \
+	composer run-script --no-dev post-install-cmd; \
+	chmod +x bin/console; sync; \
+	fi
 
 # Dev image
 FROM app_php AS app_php_dev
@@ -138,12 +138,10 @@ RUN set -eux; \
 
 RUN rm -f .env.local.php
 
-# Build Caddy with the Mercure and Vulcain modules
+# Build Caddy and Vulcain modules
 FROM caddy:${CADDY_VERSION}-builder-alpine AS app_caddy_builder
 
 RUN xcaddy build \
-	--with github.com/dunglas/mercure \
-	--with github.com/dunglas/mercure/caddy \
 	--with github.com/dunglas/vulcain \
 	--with github.com/dunglas/vulcain/caddy
 
