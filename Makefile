@@ -15,9 +15,9 @@ SYMFONY       = $(EXEC_PHP) bin/console
 # if you use Docker you can replace with: "docker-compose exec my_php_container $(EXEC_PHP) bin/console"
 
 # Executables: vendors
-PHPUNIT       = ./vendor/bin/phpunit
+PHPUNIT       = $(EXEC_PHP) bin/phpunit
 PHPSTAN       = ./vendor/bin/phpstan
-PHP_CS_FIXER  = ./vendor/bin/php-cs-fixer
+PHP_CS_FIXER  = ./tools/php-cs-fixer/vendor/bin/php-cs-fixer
 
 # Executables: local only
 SYMFONY_BIN   = symfony
@@ -76,14 +76,11 @@ build: ## Builds the images
 down: ## Stop the docker hub
 	$(DOCKER_COMP) down --remove-orphans
 
-sh: ## Log into the docker container
+bash: ## Log into the PHP docker container
 	@$(DOCKER_COMP) exec php sh
 
 logs: ## Show live logs
 	@$(DOCKER_COMP) logs --tail=0 --follow
-
-bash: ## Connect to the PHP app container
-	@$(DOCKER) container exec -it php bash
 
 ## —— Project 🐝 ———————————————————————————————————————————————————————————————
 start: up load-fixtures serve ## Start docker, load fixtures and start the webserver
@@ -99,12 +96,12 @@ load-fixtures: ## Build the DB, control the schema validity, load fixtures and c
 	@$(SYMFONY) hautelook:fixtures:load --no-interaction
 
 ## —— Tests ✅ —————————————————————————————————————————————————————————————————
-phpunit-test: phpunit.xml check ## Run PHP unit tests with optionnal suite and filter
+phpunit-test: phpunit.xml.dist ## Run PHP unit tests with optionnal suite and filter
 	@$(eval testsuite ?= 'all')
 	@$(eval filter ?= '.')
 	@$(PHPUNIT) --testsuite=$(testsuite) --filter=$(filter) --stop-on-failure
 
-phpunit-test-all: phpunit.xml ## Run all PHPUnit tests
+phpunit-test-all: phpunit.xml.dist ## Run all PHPUnit tests
 	@$(PHPUNIT) --stop-on-failure
 
 ## —— Coding standards ✨ ——————————————————————————————————————————————————————
