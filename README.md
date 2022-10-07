@@ -35,7 +35,7 @@ Docker integration (with caddy server)
 
 PHPUnit
 - https://symfony.com/doc/current/testing.html
-- https://phpunit.readthedocs.io/en/9.5/installation.html
+- https://phpunit.readthedocs.io/
 
 PHPStan
 - https://phpstan.org/user-guide/getting-started
