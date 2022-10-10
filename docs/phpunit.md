@@ -36,7 +36,7 @@ In this part we focused on `TestCase` and after that `KernelTestCase`.
  > These tests ensure that individual units of source code (e.g. a single class) behave as intended.
 
 1. Generate one simple test case in our Symfony project :
-`php bin/console make:test` puis type `TestCase`
+`php bin/console make:test` and then type `TestCase`
 or the short version :
 `php bin/console make:test TestCase`.
 2. Specify the class name **according to the standard described in the command instructions**, in our study case: `\App\Tests\PHPUnit\Controller\EmailTestController`
