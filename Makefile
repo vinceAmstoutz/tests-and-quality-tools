@@ -37,6 +37,12 @@ help: ## Outputs this help screen
 install: composer.lock ## Install vendors according to the current composer.lock file
 	@$(COMPOSER) install --no-progress --prefer-dist --optimize-autoloader
 
+update: ## Update dependencies according to the composer.json file
+	@$(COMPOSER) update
+
+recipes: ## Check outdated recipes (Symfony Flex)
+	@$(COMPOSER) recipes -o
+
 ## —— Symfony 🎵 ———————————————————————————————————————————————————————————————
 sf: ## List all Symfony commands
 	@$(SYMFONY)
