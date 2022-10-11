@@ -30,7 +30,7 @@ Adding tests
 In this part we focused on `TestCase` and after that `KernelTestCase`.
 
 
-## 1. Tests cases 
+## 1. Tests cases (a set of code tests)
 
 :book: Definition
  > These tests ensure that individual units of source code (e.g. a single class) behave as intended.
