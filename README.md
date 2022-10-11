@@ -39,7 +39,8 @@ PHPUnit
 
 PHPStan
 - https://phpstan.org/user-guide/getting-started
-- https://phpstan.org/writing-php-code/phpdocs-basics 
+- https://phpstan.org/writing-php-code/phpdocs-basics
+- https://medium.com/@edouard.courty/write-flawless-code-with-phpstan-a6ef9206cc56 
 
 Behat
 - https://github.com/Behat/Behat 
