@@ -8,8 +8,8 @@ PHP tests & code analysis
 Intention
 ----------
 Basic & advanced practice of :
-- TDD (Test Driven Development) - `PHPUnit`
-- BDD (Behavior Driven Development) - `Behat`
+- TDD (Test Driven Development for **unit & functional tests**)  - `PHPUnit`
+- BDD (Behavior Driven Development for **end to end tests** ) - `Behat`
 - Code analysis - `PHPStan` & `PHP CS Fixer`.
   
 With a blank `Symfony` project to practice them.
