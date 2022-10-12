@@ -1,6 +1,8 @@
 PHP tests & code analysis
 =========================
 
+> A bad test is equivalent to no test
+
 Intention
 ----------
 Basic & advanced practice of :
@@ -48,3 +50,6 @@ Behat
 
 PHP CS Fixer
 - https://github.com/FriendsOfPHP/PHP-CS-Fixer
+
+Symfony tutorial in French, from Grafikart, about testing a Symfony app.:
+- https://grafikart.fr/tutoriels/tests-symfony-introduction-1213#autoplay
