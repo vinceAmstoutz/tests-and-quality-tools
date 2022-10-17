@@ -116,13 +116,11 @@ cs: lint-php ## Run all coding standards checks
 static-analysis: stan ## Run the static analysis (PHPStan)
 
 stan: ## Run PHPStan
-	@$(PHPSTAN) analyse -c configuration/phpstan.neon --memory-limit 1G
+	@$(PHPSTAN) analyse -l 5 src tests
 
-lint-php: ## Lint files with php-cs-fixer
-	@$(PHP_CS_FIXER) fix --allow-risky=yes --dry-run --config=php-cs-fixer.php
-
-fix-php: ## Fix files with php-cs-fixer
-	@$(PHP_CS_FIXER) fix --allow-risky=yes --config=php-cs-fixer.php
+lint-php: ## Lint files with php-cs-fixer for src & tests folders
+	@$(PHP_CS_FIXER) fix src --allow-risky=yes --dry-run
+	@$(PHP_CS_FIXER) fix tests --allow-risky=yes --dry-run
 
 ## —— Yarn 🐱 / JavaScript —————————————————————————————————————————————————————
 dev: ## Rebuild assets for the dev env
