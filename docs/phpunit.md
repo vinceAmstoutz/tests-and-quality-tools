@@ -30,7 +30,7 @@ Adding tests
 In this part we focused on `TestCase` and after that `KernelTestCase`.
 
 
-## 1. Tests cases (a set of code tests)
+## 1. Tests cases (individual units of source code)
 
 :book: Definition
  > These tests ensure that individual units of source code (e.g. a single class) behave as intended.
@@ -39,9 +39,25 @@ In this part we focused on `TestCase` and after that `KernelTestCase`.
 `php bin/console make:test` and then type `TestCase`
 or the short version :
 `php bin/console make:test TestCase`.
-2. Specify the class name **according to the standard described in the command instructions**, in our study case: `\App\Tests\PHPUnit\Controller\EmailTestController`
+2. Specify the class name **according to the standard described in the command instructions**, in our study case: `\App\Tests\Entity\UserTest`
 
-:bulb: This generates a test controller named `EmailTestController.php` in the specified path.
+:bulb: This generates a class named `UserTest.php` in the specified path.
+
+## 2. Integration tests called KernelTestCase (services) 
+
+:book: Definition
+ > Modules/services are combined & tested as groups. That's why, we have access to the kernel, this means we have access to all services. To avoid unnecessary configuration, all services are marked as public in the environnement.
+
+1. Generate one simple test case in our Symfony project :
+`php bin/console make:test` and then type `KernelTestCase`
+or the short version :
+`php bin/console make:test KernelTestCase`.
+2. Specify the class name **according to the standard described in the command instructions**, in our study case: `\App\Tests\Repository\UserRepository`
+
+:bulb: This generates a class named `UserRepository.php` in the specified path.
+
+## 3. Web tests cases (functional tests for controllers)
+
 
 Credits
 -----------
