@@ -1,0 +1,5 @@
+App\Entity\InvitationCode:
+  code:
+    code: "54321"
+    description: Code de test
+    expireAt: <(\DateTimeImmutable::createFromMutable(new DateTime("+1 year")))>
