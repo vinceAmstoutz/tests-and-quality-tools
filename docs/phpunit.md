@@ -7,7 +7,7 @@ Version (in this tutorial) : 9.5.25
 
 Getting started
 ---------------
-1. Install the dependency if it's not present in the project : `composer require --dev symfony/test-pack` in a Symfony project or in a standard PHP project : `composer require --dev phpunit/phpunit ^9`.
+1. Install the dependency if it's not present in the project : `composer require --dev symfony/test-pack` in a Symfony project or in a standard PHP project : `composer require --dev phpunit/phpunit ^9`
 2. Check the install by running : `./bin/phpunit --version`
 
 Adding tests
