@@ -15,7 +15,7 @@ SYMFONY       = $(EXEC_PHP) bin/console
 # if you use Docker you can replace with: "docker-compose exec my_php_container $(EXEC_PHP) bin/console"
 
 # Executables: vendors
-PHPUNIT       = $(EXEC_PHP) bin/phpunit
+PHPUNIT       = $(DOCKER_COMP) exec $(EXEC_PHP) bin/phpunit
 PHPSTAN       = ./vendor/bin/phpstan
 PHP_CS_FIXER  = ./tools/php-cs-fixer/vendor/bin/php-cs-fixer
 
@@ -134,6 +134,5 @@ encore: ## Build assets for production
 	@$(YARN) run encore production
 
 ## —— Code Quality reports 📊 ——————————————————————————————————————————————————
-coverage:  ## Create the code coverage report with PHPUnit & open the last code coverage HTML page
-	$(EXEC_PHP) -d xdebug.enable=1 -d xdebug.mode=coverage -d memory_limit=-1 vendor/bin/phpunit --coverage-html=var/coverage 
-	open var/coverage/index.html
+coverage:  ## Code coverage report with PHPUnit & open the last code coverage HTML page
+	XDEBUG_MODE=coverage memory_limit=-1 ./vendor/bin/phpunit --coverage-text
