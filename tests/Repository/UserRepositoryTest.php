@@ -33,4 +33,13 @@ class UserRepositoryTest extends KernelTestCase
         $users = $this->entityManager->getRepository(User::class)->count([]);
         $this->assertEquals(10, $users);
     }
+
+    protected function tearDown(): void
+    {
+        parent::tearDown();
+
+        //recommended to avoid memory leaks
+        $this->entityManager->close();
+        $this->entityManager = null;
+    }
 }
