@@ -23,15 +23,7 @@ Dev Env
 - `PHPStan 1.8`
 - `Behat 3.11`
 - `PHP CS Fixer 3.11`
-
-Commands
---------
-Check the [Makefile](Makefile) directly or run `make help` into a bash.
-
-On Windows systems you must install `make` with [choco](https://community.chocolatey.org/packages/make#install) before using it. [Instructions](https://chocolatey.org/install) to install it very quickly.
-
-To display the `make help` correctly, you need to use a bash (linux based). So under Windows OS, ZSH or GitBash for e.g. are recommended. 
-
+  
 Documentations
 --------------
 Docker integration (with caddy server)
