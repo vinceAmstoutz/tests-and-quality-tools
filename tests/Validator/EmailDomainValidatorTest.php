@@ -40,7 +40,7 @@ class EmailDomainValidatorTest extends ConstraintValidatorTestCase
     }
 
     /**
-     * @return array<array, string>
+     * @return array<array <string>>
      */
     public function getStaticDomainBlackList(): array
     {
