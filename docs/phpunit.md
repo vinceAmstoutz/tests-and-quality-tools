@@ -39,7 +39,10 @@ In this part we focused on `TestCase` and after that `KernelTestCase`.
 `php bin/console make:test` and then type `TestCase`
 or the short version :
 `php bin/console make:test TestCase`.
-2. Specify the class name **according to the standard described in the command instructions**, for e.g : `\App\Tests\Entity\EntityTest`
+2. Specify the class name **according to the standard described in the command instructions**, in our study case:
+   1. with an validator :
+      1. `App\Tests\Validator\EmailDomainTest` (constraint)
+      2. `App\Tests\Validator\EmailDomainValidatorTest` (validator)
 
 :bulb: This generates a class named `UserTest.php` in the specified path.
 
@@ -53,8 +56,8 @@ or the short version :
 or the short version :
 `php bin/console make:test KernelTestCase`.
 2. Specify the class name **according to the standard described in the command instructions**, in our study case: 
-   1. Repository test : `\App\Tests\Repository\UserRepository`
-   2. Entity test : `\App\Tests\Entity\UserEntity`
+   1. Repository test : `\App\Tests\Repository\UserRepositoryTest`
+   2. Entity test : `\App\Tests\Entity\UserEntityTest`
 
 :bulb: This generates a test class named in the specified path with the KernelTestCase boilerplate. 
 
