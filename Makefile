@@ -89,17 +89,16 @@ logs: ## Show live logs
 	@$(DOCKER_COMP) logs --tail=0 --follow
 
 ## —— Project 🐝 ———————————————————————————————————————————————————————————————
-start: up load-fixtures serve ## Start docker, load fixtures and start the webserver
-reload: load-fixtures ## Load fixtures
+start: up bdd serve ## Start docker, load fixtures and start the webserver
 stop: down unserve ## Stop docker and the Symfony binary server
 
-load-fixtures: ## Build the DB, control the schema validity, load fixtures and check the migration status
+bdd: ## Build the DB, control the schema validity, load fixtures and check the migration status
 	@$(SYMFONY) doctrine:cache:clear-metadata
 	@$(SYMFONY) doctrine:database:create --if-not-exists
 	@$(SYMFONY) doctrine:schema:drop --force
 	@$(SYMFONY) doctrine:schema:create
 	@$(SYMFONY) doctrine:schema:validate
-	@$(SYMFONY) hautelook:fixtures:load --no-interaction
+	@$(SYMFONY) doctrine:fixtures:load --no-interaction
 
 ## —— Tests ✅ —————————————————————————————————————————————————————————————————
 phpunit-test: phpunit.xml.dist ## Run PHP unit tests with optionnal suite and filter
