@@ -6,6 +6,7 @@ namespace App\Tests\Entity;
 
 use DateTimeImmutable;
 use App\Entity\InvitationCode;
+use App\Tests\ErrorTrait;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 use Liip\TestFixturesBundle\Services\DatabaseToolCollection;
 use Liip\TestFixturesBundle\Services\DatabaseTools\AbstractDatabaseTool;
@@ -13,6 +14,8 @@ use Symfony\Component\Validator\ConstraintViolation;
 
 class InvitationCodeTest extends KernelTestCase
 {
+    use ErrorTrait;
+
     /** @var AbstractDatabaseTool */
     protected $databaseTool;
 
@@ -31,25 +34,9 @@ class InvitationCodeTest extends KernelTestCase
             ->setExpireAt(new DateTimeImmutable());
     }
 
-    //TODO: put in a trait !
-    public function assertHasError(InvitationCode $code, int $expected = 0)
-    {
-        $messages = [];
-        self::bootKernel();
-
-        $errors = static::getContainer()->get('validator')->validate($code);
-
-        /** @var ConstraintViolation $error */
-        foreach ($errors as $error) {
-            $messages[] = $error->getPropertyPath() . ' => ' . $error->getMessage();
-        }
-
-        $this->assertCount($expected, $errors, implode(',', $messages));
-    }
-
     public function testValidEntity(): void
     {
-        $this->assertHasError($this->getEntity()->setCode('1234'), 0);
+        $this->assertHasError($this->getEntity()->setCode('1234'), 1);
     }
 
     public function testInvalidEntity(): void
