@@ -5,16 +5,16 @@ PHP tests & code analysis
 
 :warning: unit tests != functional tests != end to end tests 
 
-Intention
+:brain: Intention
 ----------
 Basic & advanced practice of :
 - TDD (Test Driven Development for **unit & functional tests**)  - `PHPUnit`
 - BDD (Behavior Driven Development for **end to end tests** ) - `Behat`
 - Code analysis - `PHPStan` & `PHP CS Fixer`.
   
-With a blank `Symfony` project to practice them.
+With a blank `Symfony` project to practice them and I take the opportunity to practice SOLID, KISS and other code quality principles.
 
-Dev Env
+:shield: Dev Env
 --------
 - `Symfony 6.1` (traditional web app skeleton)
 - `PHP 8.1`
@@ -24,7 +24,13 @@ Dev Env
 - `Behat 3.11`
 - `PHP CS Fixer 3.11`
   
-Documentations
+:gift: Pros tips
+---------
+- Red Green Refactor for TDD
+- Replace STUPID by SOLID
+- DRY vs WET for less complexity  
+
+:books: Documentations & resources
 --------------
 Docker integration (with caddy server)
 - https://github.com/dunglas/symfony-docker#docs 
