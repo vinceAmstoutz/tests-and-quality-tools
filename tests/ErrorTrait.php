@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace App\Tests;
 
+use Symfony\Component\Validator\ConstraintViolation;
+
 trait ErrorTrait
 {
     public function assertHasError(Object $object, int $expected = 0)
