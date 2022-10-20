@@ -40,7 +40,7 @@ In this part we focused on `TestCase` and after that `KernelTestCase`.
 or the short version :
 `php bin/console make:test TestCase`.
 2. Specify the class name **according to the standard described in the command instructions**, in our study case:
-   1. with an validator :
+   1. with validator & constraint :
       1. `App\Tests\Validator\EmailDomainTest` (constraint)
       2. `App\Tests\Validator\EmailDomainValidatorTest` (validator)
 
