@@ -15,7 +15,7 @@ SYMFONY       = $(EXEC_PHP) bin/console
 # if you use Docker you can replace with: "docker-compose exec my_php_container $(EXEC_PHP) bin/console"
 
 # Executables: vendors
-PHPUNIT       = $(DOCKER_COMP) exec $(EXEC_PHP) bin/phpunit
+PHPUNIT       = $(PHP_CONTAINER) bin/phpunit
 PHPSTAN       = ./vendor/bin/phpstan
 PHP_CS_FIXER  = ./tools/php-cs-fixer/vendor/bin/php-cs-fixer
 
@@ -23,6 +23,9 @@ PHP_CS_FIXER  = ./tools/php-cs-fixer/vendor/bin/php-cs-fixer
 SYMFONY_BIN   = symfony
 DOCKER        = docker
 DOCKER_COMP   = docker-compose
+
+# Exec in container from local
+PHP_CONTAINER = $(DOCKER_COMP) exec $(EXEC_PHP)
 
 # Misc
 .DEFAULT_GOAL = help
@@ -93,12 +96,12 @@ start: up bdd serve ## Start docker, load fixtures and start the webserver
 stop: down unserve ## Stop docker and the Symfony binary server
 
 bdd: ## Build the DB, control the schema validity, load fixtures and check the migration status
-	@$(SYMFONY) doctrine:cache:clear-metadata
-	@$(SYMFONY) doctrine:database:create --if-not-exists
-	@$(SYMFONY) doctrine:schema:drop --force
-	@$(SYMFONY) doctrine:schema:create
-	@$(SYMFONY) doctrine:schema:validate
-	@$(SYMFONY) doctrine:fixtures:load --no-interaction
+	$(PHP_CONTAINER) @$(SYMFONY) doctrine:cache:clear-metadata
+	$(PHP_CONTAINER) @$(SYMFONY) doctrine:database:create --if-not-exists
+	$(PHP_CONTAINER) @$(SYMFONY) doctrine:schema:drop --force
+	$(PHP_CONTAINER) @$(SYMFONY) doctrine:schema:create
+	$(PHP_CONTAINER) @$(SYMFONY) doctrine:schema:validate
+	$(PHP_CONTAINER) @$(SYMFONY) doctrine:fixtures:load --no-interaction
 
 ## —— Tests ✅ —————————————————————————————————————————————————————————————————
 phpunit-test: phpunit.xml.dist ## Run PHP unit tests with optionnal suite and filter
