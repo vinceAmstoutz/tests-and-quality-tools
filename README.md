@@ -10,7 +10,7 @@ PHP tests & code analysis
 Basic & advanced practice of :
 - TDD (Test Driven Development for **unit & functional tests**)  - `PHPUnit`
 - BDD (Behavior Driven Development for **end to end tests** ) - `Behat`
-- Code analysis - `PHPStan` & `PHP CS Fixer`.
+- Code analysis - `PHPStan` & `PHP CS Fixer` & `Decomplex web tool`.
   
 With a blank `Symfony` project to practice them and I take the opportunity to practice SOLID, KISS and other code quality principles.
 
@@ -50,6 +50,15 @@ Behat
 
 PHP CS Fixer
 - https://github.com/FriendsOfPHP/PHP-CS-Fixer
+
+Decomplex web tool 
+- :chart: The complexity is measured with two KPI (cyclomatic complexity + cognitive complexity)
+with a complexity quantified between 0 & 10 for each of them (an acceptable rate is 4 maximum).
+
+    :link: It's possible to share the result by a permalink directly.
+
+- https://github.com/chr-hertel/decomplex
+- https://decomplex.me/eZGq7A 
 
 Symfony tutorial in French, from Grafikart, about testing a Symfony app.:
 - https://grafikart.fr/tutoriels/tests-symfony-introduction-1213#autoplay
