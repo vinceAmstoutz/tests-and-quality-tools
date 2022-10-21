@@ -11,17 +11,11 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 class ExceptionSubscriber implements EventSubscriberInterface
 {
-    private MailerInterface $mailer;
-    private string $from;
-    private string $to;
-
-    public function create(MailerInterface $mailer, string $from, string $to): ExceptionSubscriber
-    {
-        $this->mailer = $mailer;
-        $this->from = $from;
-        $this->to = $to;
-
-        return $this;
+    public function __construct(
+        private MailerInterface $mailer,
+        private string $from,
+        private string $to
+    ) {
     }
 
     public function onException(ExceptionEvent $event): void

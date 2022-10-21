@@ -54,8 +54,11 @@ class ExceptionSubscriberTest extends TestCase
 
     private function dispatch(MailerInterface|MockObject $mailer): void
     {
-        $subscriber = (new ExceptionSubscriber())
-            ->create($mailer, 'app@domain.com', 'admin@domain.com');
+        $subscriber = new ExceptionSubscriber(
+            $mailer,
+            'app@domain.com',
+            'admin@domain.com'
+        );
 
         /**
          * @var KernelInterface
