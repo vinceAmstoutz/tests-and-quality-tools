@@ -8,7 +8,7 @@ use Symfony\Component\Validator\ConstraintViolation;
 
 trait ErrorTrait
 {
-    public function assertHasError(Object $object, int $expected = 0)
+    public function assertHasError(Object $object, int $expected = 0): void
     {
         $messages = [];
         self::bootKernel();

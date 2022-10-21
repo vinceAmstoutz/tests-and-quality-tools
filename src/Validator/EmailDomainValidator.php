@@ -9,7 +9,7 @@ use Symfony\Component\Validator\ConstraintValidator;
 
 class EmailDomainValidator extends ConstraintValidator
 {
-    public function validate($value, Constraint $constraint)
+    public function validate(mixed $value, Constraint $constraint): void
     {
         /* @var App\Validator\EmailDomain $constraint */
 

@@ -13,7 +13,7 @@ class EmailDomainValidatorTest extends ConstraintValidatorTestCase
 {
     use ErrorTrait;
 
-    protected function createValidator()
+    protected function createValidator(): EmailDomainValidator
     {
         return new EmailDomainValidator();
     }

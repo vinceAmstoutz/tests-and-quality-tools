@@ -55,7 +55,7 @@ class InvitationCodeTest extends KernelTestCase
         $this->assertHasError($this->getEntity()->setDescription(''), 1);
     }
 
-    public function testDuplicateCode()
+    public function testDuplicateCode(): void
     {
         $this->databaseTool->loadAliceFixture([
             dirname(__DIR__) . '/fixtures/invitation_codes.yaml',
