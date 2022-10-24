@@ -23,11 +23,9 @@ Adding tests
     ApiTestCase - to run API-oriented scenarios
     PantherTestCase - to run e2e scenarios
 ```
-
 :bulb: Note that you can see this list by running `php bin/console make:test`
 
-
-In this part we focused on `TestCase` and after that `KernelTestCase` and `WebTestCase`.
+In this part we will test them all (except `ApiTestCase`)!
 
 ## 1. Tests cases (individual units of source code)
 
@@ -76,8 +74,26 @@ or the short version :
 `php bin/console make:test WebTestCase`.
 2. Specify the class name  **according to the standard described in the command instructions**, in our study case : 
    1. `Controller\HomepageControllerTest`. (basic)
-   2. `Controller\FakeSecurityControllerTest`. (advanced)
+   2. `Controller\FakeSecurityControllerTest`. (**advanced about security**)
+   3. `Controller\EmailControllerTest`. (**advanced about emails**)
 3. Add logic to test responses based on different types of requests.
+
+:warning: Application tests are responses-oriented in order to be more flexible and let unit tests check the object behavior independently. 
+
+Fixtures 
+------------
+**To test the project (kernel & functional tests only) I used 2 types of fixtures :**
+
+### 1. FakerPHP (replace `fzaninotto/Faker`)
+Basic usage, example in `src\DataFixtures\UserFixtures.php`.
+### 2. YAML fixtures 
+Created thanks to the SF bundle https://github.com/theofidry/AliceBundle 
+
+:bulb: Its allow us to load alice fixtures from files and almost without touching the DB schema & the DB content!
+
+Examples in :
+- `tests\Entity\InvitationCodeTest.php`
+- `tests\Controller\Trait\LoginConnectionTrait.php`
 
 Credits
 -----------
@@ -85,3 +101,4 @@ A big thank you for these extraordinarily well done resources that allowed me to
 - https://symfony.com/doc/current/testing.html
 - https://www.strangebuzz.com/en/blog/organizing-your-symfony-project-tests
 - https://grafikart.fr/formations/symfony-tests (case studies written by him)
+- https://github.com/theofidry/AliceBundle (SF AliceBundle for fixtures)
