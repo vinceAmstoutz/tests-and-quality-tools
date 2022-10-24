@@ -10,7 +10,6 @@ use App\Tests\ErrorTrait;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 use Liip\TestFixturesBundle\Services\DatabaseToolCollection;
 use Liip\TestFixturesBundle\Services\DatabaseTools\AbstractDatabaseTool;
-use Symfony\Component\Validator\ConstraintViolation;
 
 class InvitationCodeTest extends KernelTestCase
 {
