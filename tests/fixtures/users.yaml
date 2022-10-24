@@ -1,0 +1,9 @@
+App\Entity\User:
+  user_test:
+    email: test.user@app.com
+    password: b109f3bbbc244eb82441917ed06d618b9008dd09b3befd1b5e07394c706a8bb980b1d7785e5976ec049b46df5f1326af5a2ea6d103fd07c95385ffab0cacbc86
+    roles: ["ROLE_USER"]
+  user_admin:
+    email: test.admin@app.com
+    password: 31a556961f3438f9f632ca27812d22228e98e5083eea2bf9b78d0bb374d44deb0dc4d1bc16ab64127eb74e8452ea6902d97937c28310a7ab62a9ae1c15d96d69
+    roles: ["ROLE_ADMIN"]
