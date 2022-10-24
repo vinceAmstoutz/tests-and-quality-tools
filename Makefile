@@ -16,8 +16,8 @@ SYMFONY       = $(EXEC_PHP) bin/console
 
 # Executables: vendors
 PHPUNIT       = $(PHP_CONTAINER) bin/phpunit
-PHPSTAN       = ./vendor/bin/phpstan
-PHP_CS_FIXER  = ./tools/php-cs-fixer/vendor/bin/php-cs-fixer
+PHPSTAN       = $(PHP_CONTAINER) ./vendor/bin/phpstan
+PHP_CS_FIXER  = $(PHP_CONTAINER) ./tools/php-cs-fixer/vendor/bin/php-cs-fixer
 
 # Executables: local only
 SYMFONY_BIN   = symfony
@@ -118,7 +118,7 @@ cs: lint-php ## Run all coding standards checks
 static-analysis: stan ## Run the static analysis (PHPStan)
 
 stan: ## Run PHPStan
-	@$(PHPSTAN) analyse -l 5 src tests
+	@$(PHPSTAN) analyse -l 6 src tests
 
 lint-php: ## Lint files with php-cs-fixer for src & tests folders
 	@$(PHP_CS_FIXER) fix src --allow-risky=yes --dry-run
