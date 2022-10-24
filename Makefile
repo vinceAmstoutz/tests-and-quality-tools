@@ -96,12 +96,12 @@ start: up bdd serve ## Start docker, load fixtures and start the webserver
 stop: down unserve ## Stop docker and the Symfony binary server
 
 bdd: ## Build the DB, control the schema validity, load fixtures and check the migration status
-	$(PHP_CONTAINER) @$(SYMFONY) doctrine:cache:clear-metadata
-	$(PHP_CONTAINER) @$(SYMFONY) doctrine:database:create --if-not-exists
-	$(PHP_CONTAINER) @$(SYMFONY) doctrine:schema:drop --force
-	$(PHP_CONTAINER) @$(SYMFONY) doctrine:schema:create
-	$(PHP_CONTAINER) @$(SYMFONY) doctrine:schema:validate
-	$(PHP_CONTAINER) @$(SYMFONY) doctrine:fixtures:load --no-interaction
+	$(PHP_CONTAINER) $(SYMFONY) doctrine:cache:clear-metadata
+	$(PHP_CONTAINER) $(SYMFONY) doctrine:database:create --if-not-exists
+	$(PHP_CONTAINER) $(SYMFONY) doctrine:schema:drop --force
+	$(PHP_CONTAINER) $(SYMFONY) doctrine:schema:create
+	$(PHP_CONTAINER) $(SYMFONY) doctrine:schema:validate
+	$(PHP_CONTAINER) $(SYMFONY) doctrine:fixtures:load --no-interaction
 
 ## —— Tests ✅ —————————————————————————————————————————————————————————————————
 phpunit-test: phpunit.xml.dist ## Run PHP unit tests with optionnal suite and filter
