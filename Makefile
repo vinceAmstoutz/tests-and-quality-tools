@@ -118,7 +118,7 @@ cs: lint-php ## Run all coding standards checks
 static-analysis: stan ## Run the static analysis (PHPStan)
 
 stan: ## Run PHPStan
-	@$(PHPSTAN) analyse -l 6 src tests
+	@$(PHPSTAN) analyse -c phpstan.neon.dist --memory-limit 1G
 
 lint-php: ## Lint files with php-cs-fixer for src & tests folders
 	@$(PHP_CS_FIXER) fix src --allow-risky=yes --dry-run
