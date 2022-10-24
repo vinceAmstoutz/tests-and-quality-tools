@@ -75,7 +75,8 @@ or the short version :
 or the short version :
 `php bin/console make:test WebTestCase`.
 2. Specify the class name  **according to the standard described in the command instructions**, in our study case : 
-   1. `Controller\HomepageControllerTest`.
+   1. `Controller\HomepageControllerTest`. (basic)
+   2. `Controller\FakeSecurityControllerTest`. (advanced)
 3. Add logic to test responses based on different types of requests.
 
 Credits
