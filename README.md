@@ -3,7 +3,7 @@ PHP tests & code analysis
 
 > A bad test is equivalent to no test
 
-:warning: unit tests != integration tests != functional tests (feature oriented) != end to end tests 
+:warning: unit tests != integration tests != functional tests (end to end tests)
 
 :brain: Intention
 ----------
