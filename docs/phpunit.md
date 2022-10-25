@@ -80,8 +80,13 @@ or the short version :
 
 :warning: Application tests are responses-oriented in order to be more flexible and let unit tests check the object behavior independently. 
 
-Fixtures 
-------------
+## 4. EndToEnd tests (functional tests using browsers)
+https://github.com/symfony/panther (Google & Firefox diver support)
+
+<=> WebTestCase as you can see in `tests\PHPUnit\EndToEnd\Controller\HomepageControllerTest.php`
+
+Fixtures for testing
+--------------------
 **To test the project (kernel & functional tests only) I used 2 types of fixtures :**
 
 ### 1. FakerPHP (replace `fzaninotto/Faker`)
@@ -102,3 +107,5 @@ A big thank you for these extraordinarily well done resources that allowed me to
 - https://www.strangebuzz.com/en/blog/organizing-your-symfony-project-tests
 - https://grafikart.fr/formations/symfony-tests (case studies written by him)
 - https://github.com/theofidry/AliceBundle (SF AliceBundle for fixtures)
+- https://symfony.com/blog/introducing-symfony-panther-a-browser-testing-and-web-scrapping-library-for-php
+- https://github.com/symfony/panther

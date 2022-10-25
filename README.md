@@ -39,6 +39,9 @@ PHPUnit
 - https://symfony.com/doc/current/testing.html
 - https://phpunit.readthedocs.io/
 
+Symfony Panther (E2E tests)
+- https://github.com/symfony/panther
+  
 PHPStan
 - https://phpstan.org/user-guide/getting-started
 - https://phpstan.org/writing-php-code/phpdocs-basics
