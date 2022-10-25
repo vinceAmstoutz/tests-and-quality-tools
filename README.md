@@ -3,13 +3,13 @@ PHP tests & code analysis
 
 > A bad test is equivalent to no test
 
-:warning: unit tests != functional tests != end to end tests 
+:warning: unit tests != integration tests != functional tests (feature oriented) != end to end tests 
 
 :brain: Intention
 ----------
 Basic & advanced practice of :
-- TDD (Test Driven Development for **unit & functional tests**)  - `PHPUnit`
-- BDD (Behavior Driven Development for **end to end tests** ) - `Behat`
+- TDD (Test Driven Development for **unit, integration & functional tests**)  - `PHPUnit`
+- BDD (Behavior Driven Development for **end to end tests** ) - `Symfony Panther & Behat`
 - Code analysis - `PHPStan` & `PHP CS Fixer` & `Decomplex web tool`.
   
 With a blank `Symfony` project to practice them and I take the opportunity to practice SOLID, KISS and other code quality principles.

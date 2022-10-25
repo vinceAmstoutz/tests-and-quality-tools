@@ -61,7 +61,7 @@ or the short version :
 
 :bulb: This generates a test class named in the specified path with the KernelTestCase boilerplate. 
 
-## 3. Web tests cases (functional tests for controllers)
+## 3. Web tests cases (functional & integrations tests for controllers)
 :speaking_head: **Also call as "application tests"**.
 
 :book: Definition
@@ -80,7 +80,7 @@ or the short version :
 
 :warning: Application tests are responses-oriented in order to be more flexible and let unit tests check the object behavior independently. 
 
-## 4. EndToEnd tests (functional tests using browsers)
+## 4. EndToEnd tests (functional tests "feature-oriented" using browsers)
 https://github.com/symfony/panther (Google & Firefox diver support)
 
 <=> WebTestCase as you can see in `tests\PHPUnit\EndToEnd\Controller\HomepageControllerTest.php`
