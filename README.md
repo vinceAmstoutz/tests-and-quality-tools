@@ -1,3 +1,5 @@
+[![CI](https://github.com/vinceAmstoutz/tests-and-quality-tools/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/vinceAmstoutz/tests-and-quality-tools/actions/workflows/ci.yml)
+
 PHP tests & code analysis
 =========================
 
