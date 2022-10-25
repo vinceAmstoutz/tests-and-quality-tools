@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Tests\Controller;
+namespace App\Tests\PHPUnit\EndToEnd\Controller;
 
 use Symfony\Component\Panther\PantherTestCase;
 
-class ContactControllerTest extends PantherTestCase
+class HomepageControllerTest extends PantherTestCase
 {
-    public function testSomething(): void
+    public function testHomepageContent(): void
     {
         $client = static::createPantherClient();
         $client->request('GET', '/');

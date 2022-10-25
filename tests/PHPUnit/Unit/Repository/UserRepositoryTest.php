@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Tests\Repository;
+namespace App\Tests\PHPUnit\Unit\Repository;
 
 use App\Entity\User;
 use Doctrine\ORM\EntityManager;

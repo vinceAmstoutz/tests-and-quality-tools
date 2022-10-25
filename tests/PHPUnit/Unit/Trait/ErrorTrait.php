@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Tests;
+namespace App\Tests\PHPUnit\Unit\Trait;
 
 use Symfony\Component\Validator\ConstraintViolation;
 

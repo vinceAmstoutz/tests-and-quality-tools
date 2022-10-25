@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Tests\Controller\Trait;
+namespace App\Tests\PHPUnit\Functional\Trait;
 
 use App\Entity\User;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
@@ -15,7 +15,7 @@ trait LoginConnectionTrait
         $usersFixtures = static::getContainer()
             ->get(DatabaseToolCollection::class)
             ->get()->loadAliceFixture([
-                dirname(__DIR__, 2) . '/fixtures/users.yaml',
+                dirname(__DIR__, 2) . '/YamlFixtures/users.yaml',
             ]);
 
         /** @var User */

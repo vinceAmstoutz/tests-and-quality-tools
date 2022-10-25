@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace App\Tests\Controller;
+namespace App\Tests\PHPUnit\Functional\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
-use App\Tests\Controller\Trait\LoginConnectionTrait;
+use App\Tests\PHPUnit\Functional\Trait\LoginConnectionTrait;
 
 class FakeSecurityControllerTest extends WebTestCase
 {

@@ -2,11 +2,10 @@
 
 declare(strict_types=1);
 
-namespace App\Tests\Entity;
+namespace App\Tests\PHPUnit\Unit\Entity;
 
-use DateTimeImmutable;
 use App\Entity\InvitationCode;
-use App\Tests\ErrorTrait;
+use App\Tests\PHPUnit\Unit\Trait\ErrorTrait;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 use Liip\TestFixturesBundle\Services\DatabaseToolCollection;
 use Liip\TestFixturesBundle\Services\DatabaseTools\AbstractDatabaseTool;
@@ -30,7 +29,7 @@ class InvitationCodeTest extends KernelTestCase
         return (new InvitationCode())
             ->setCode('12345')
             ->setDescription('Test description')
-            ->setExpireAt(new DateTimeImmutable());
+            ->setExpireAt(new \DateTimeImmutable());
     }
 
     public function testValidEntity(): void
@@ -57,7 +56,8 @@ class InvitationCodeTest extends KernelTestCase
     public function testDuplicateCode(): void
     {
         $this->databaseTool->loadAliceFixture([
-            dirname(__DIR__) . '/fixtures/invitation_codes.yaml',
+
+            dirname(__DIR__, 2) . '/YamlFixtures/invitation_codes.yaml',
         ]);
 
         $this->assertHasError($this->getEntity()->setCode('54321'), 1);

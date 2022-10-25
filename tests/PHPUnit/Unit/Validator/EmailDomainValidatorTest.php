@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace App\Tests\Validator;
+namespace App\Tests\PHPUnit\Unit\Validator;
 
-use App\Tests\ErrorTrait;
 use App\Validator\EmailDomain;
 use App\Validator\EmailDomainValidator;
+use App\Tests\PHPUnit\Unit\Trait\ErrorTrait;
 use Symfony\Component\Validator\Test\ConstraintValidatorTestCase;
 
 class EmailDomainValidatorTest extends ConstraintValidatorTestCase

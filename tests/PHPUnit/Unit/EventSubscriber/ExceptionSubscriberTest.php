@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Tests\EventSubscriber;
+namespace App\Tests\PHPUnit\Unit\EventSubscriber;
 
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Mime\Email;

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Tests\Validator;
+namespace App\Tests\PHPUnit\Unit\Validator;
 
 use App\Validator\EmailDomain;
 use PHPUnit\Framework\TestCase;
