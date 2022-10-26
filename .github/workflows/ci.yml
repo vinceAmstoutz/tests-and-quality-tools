@@ -21,7 +21,11 @@ jobs:
                     case $status in
                       starting) sleep 1;;
                       healthy) exit 0;;
-                      unhealthy) exit 1;;
+                      unhealthy)
+                        docker compose ps
+                        docker compose logs
+                        exit 1
+                      ;;
                     esac
                   done
                   exit 1
