@@ -80,11 +80,9 @@ check: ## Docker check php container
 ## —— Project 🐝 ———————————————————————————————————————————————————————————————
 bdd: ## Build the DB, control the schema validity, load fixtures and check the migration status (see --env option)
 	@$(eval APP_ENV ?= dev)
-	$(SYMFONY) doctrine:cache:clear-metadata --env=$(APP_ENV)
 	$(SYMFONY) doctrine:database:create --if-not-exists --env=$(APP_ENV)
-	$(SYMFONY) doctrine:schema:drop --force --env=$(APP_ENV)
-	$(SYMFONY) doctrine:schema:create --env=$(APP_ENV)
-	$(SYMFONY) doctrine:schema:validate --env=$(APP_ENV)
+	$(SYMFONY) doctrine:schema:drop --full-database --force --env=$(APP_ENV)
+	$(SYMFONY) doctrine:migrations:migrate --no-interaction --env=$(APP_ENV)
 	$(SYMFONY) doctrine:fixtures:load --no-interaction --env=$(APP_ENV)
 
 ## —— Tests ✅ —————————————————————————————————————————————————————————————————
