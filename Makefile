@@ -1,38 +1,30 @@
 # —— Inspired by ———————————————————————————————————————————————————————————————
 # https://www.strangebuzz.com/en/snippets/the-perfect-makefile-for-symfony
+# https://github.com/dunglas/symfony-docker/blob/main/docs/makefile.md
+# And me https://github.com/vinceAmstoutz
 
 # Setup ————————————————————————————————————————————————————————————————————————
-# Parameters
-HTTP_PORT     = 8000
+# Executables (local)
+DOCKER_COMP = docker compose
+DOCKER        = docker
+
+# Docker containers
+PHP_CONT = $(DOCKER_COMP) exec php
 
 # Executables
-EXEC_PHP      = php
-COMPOSER      = composer
-YARN          = yarn
-
-# Alias
-SYMFONY       = $(EXEC_PHP) bin/console
-# if you use Docker you can replace with: "docker-compose exec my_php_container $(EXEC_PHP) bin/console"
+PHP      = $(PHP_CONT) php
+COMPOSER = $(PHP_CONT) composer
+SYMFONY  = $(PHP_CONT) bin/console
 
 # Executables: vendors
-PHPUNIT       = $(PHP_CONTAINER) bin/phpunit
-PHPSTAN       = $(PHP_CONTAINER) ./vendor/bin/phpstan
-PHP_CS_FIXER  = $(PHP_CONTAINER) ./tools/php-cs-fixer/vendor/bin/php-cs-fixer
-
-# Executables: local only
-SYMFONY_BIN   = symfony
-DOCKER        = docker
-DOCKER_COMP   = docker-compose
-
-# Exec in container from local
-PHP_CONTAINER = $(DOCKER_COMP) exec $(EXEC_PHP)
+PHPUNIT       = $(PHP_CONT) bin/phpunit
+PHPSTAN       = $(PHP_CONT) ./vendor/bin/phpstan
+PHP_CS_FIXER  = $(PHP_CONT) ./tools/php-cs-fixer/vendor/bin/php-cs-fixer
 
 # Misc
 .DEFAULT_GOAL = help
-.PHONY        : # Not needed here, but you can put your all your targets to be sure
-                # there is no name conflict between your files and your targets.
 
-## —— 🐝 Project Makefile inspired by Strangebuzz 🐝 ———————————————————————————————————
+## —— 🐳& SF Project Makefile ———————————————————————————————————
 help: ## Outputs this help screen
 	@grep -E '(^[a-zA-Z0-9_-]+:.*?##.*$$)|(^##)' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}{printf "\033[32m%-30s\033[0m %s\n", $$1, $$2}' | sed -e 's/\[32m##/[33m/'
 
@@ -65,16 +57,6 @@ assets: purge ## Install the assets with symlinks in the public folder
 purge: ## Purge cache and logs
 	@rm -rf var/cache/* var/logs/*
 
-## —— Symfony binary 💻 ————————————————————————————————————————————————————————
-cert-install: ## Install the local HTTPS certificates
-	@$(SYMFONY_BIN) server:ca:install
-
-serve: ## Serve the application with HTTPS support (add "--no-tls" to disable https)
-	@$(SYMFONY_BIN) serve --daemon --port=$(HTTP_PORT)
-
-unserve: ## Stop the webserver
-	@$(SYMFONY_BIN) server:stop
-
 ## —— Docker 🐳 ————————————————————————————————————————————————————————————————
 up: ## Start the docker hub
 	$(DOCKER_COMP) up --detach
@@ -91,32 +73,30 @@ bash: ## Log into the PHP docker container
 logs: ## Show live logs
 	@$(DOCKER_COMP) logs --tail=0 --follow
 
-## —— Project 🐝 ———————————————————————————————————————————————————————————————
-start: up bdd serve ## Start docker, load fixtures and start the webserver
-stop: down unserve ## Stop docker and the Symfony binary server
+check: ## Docker check
+	@$(DOCKER) info > /dev/null 2>&1                                                                   # Docker is up
+	@test '"healthy"' = `$(DOCKER) inspect --format "{{json .State.Health.Status }}" tests-and-quality-tools-php-1` # PHP container is up and healthy
 
-bdd: ## Build the DB, control the schema validity, load fixtures and check the migration status
-	$(PHP_CONTAINER) $(SYMFONY) doctrine:cache:clear-metadata
-	$(PHP_CONTAINER) $(SYMFONY) doctrine:database:create --if-not-exists
-	$(PHP_CONTAINER) $(SYMFONY) doctrine:schema:drop --force
-	$(PHP_CONTAINER) $(SYMFONY) doctrine:schema:create
-	$(PHP_CONTAINER) $(SYMFONY) doctrine:schema:validate
-	$(PHP_CONTAINER) $(SYMFONY) doctrine:fixtures:load --no-interaction
+## —— Project 🐝 ———————————————————————————————————————————————————————————————
+bdd: ## Build the DB, control the schema validity, load fixtures and check the migration status (see --env option)
+	@$(eval APP_ENV ?= dev)
+	$(SYMFONY) doctrine:cache:clear-metadata --env=$(APP_ENV)
+	$(SYMFONY) doctrine:database:create --if-not-exists --env=$(APP_ENV)
+	$(SYMFONY) doctrine:schema:drop --force --env=$(APP_ENV)
+	$(SYMFONY) doctrine:schema:create --env=$(APP_ENV)
+	$(SYMFONY) doctrine:schema:validate --env=$(APP_ENV)
+	$(SYMFONY) doctrine:fixtures:load --no-interaction --env=$(APP_ENV)
 
 ## —— Tests ✅ —————————————————————————————————————————————————————————————————
-phpunit-test: phpunit.xml.dist ## Run PHP unit tests with optionnal suite and filter
+test: phpunit.xml.dist ## Run PHP unit tests with optionnal suite and filter
 	@$(eval testsuite ?= 'all')
 	@$(eval filter ?= '.')
 	@$(PHPUNIT) --testsuite=$(testsuite) --filter=$(filter) --stop-on-failure
 
-phpunit-test-all: phpunit.xml.dist ## Run all PHPUnit tests
+test-all: phpunit.xml.dist ## Run all PHPUnit tests
 	@$(PHPUNIT) --stop-on-failure
 
 ## —— Coding standards ✨ ——————————————————————————————————————————————————————
-cs: lint-php ## Run all coding standards checks
-
-static-analysis: stan ## Run the static analysis (PHPStan)
-
 stan: ## Run PHPStan
 	@$(PHPSTAN) analyse -c phpstan.neon.dist --memory-limit 1G
 
@@ -124,17 +104,8 @@ lint-php: ## Lint files with php-cs-fixer for src & tests folders
 	@$(PHP_CS_FIXER) fix src --allow-risky=yes --dry-run
 	@$(PHP_CS_FIXER) fix tests --allow-risky=yes --dry-run
 
-## —— Yarn 🐱 / JavaScript —————————————————————————————————————————————————————
-dev: ## Rebuild assets for the dev env
-	@$(YARN) install --check-files
-	@$(YARN) run encore dev
-
-watch: ## Watch files and build assets when needed for the dev env
-	@$(YARN) run encore dev --watch
-
-encore: ## Build assets for production
-	@$(YARN) run encore production
-
 ## —— Code Quality reports 📊 ——————————————————————————————————————————————————
-coverage:  ## Code coverage report with PHPUnit & open the last code coverage HTML page
-	XDEBUG_MODE=coverage memory_limit=-1 ./vendor/bin/phpunit --coverage-text
+ci: ##Execute CI locally
+	$(EXEC_PHP) ./bin/act
+coverage: ## Create the code coverage report with PHPUnit
+	$(EXEC_PHP) -d xdebug.enable=1 -d xdebug.mode=coverage -d memory_limit=-1 vendor/bin/phpunit --coverage-html=var/coverage
