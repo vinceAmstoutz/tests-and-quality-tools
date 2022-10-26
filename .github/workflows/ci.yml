@@ -17,19 +17,27 @@ jobs:
               run: docker compose up --build -d
             - name: Wait for services
               run: |
-                  while status="$(docker inspect --format "{{json .State.Health.Status }}" tests-and-quality-tools-php-1)"; do
-                    case $status in
-                      starting) sleep 1;;
-                      healthy) exit 0;;
-                      unhealthy)
-                        docker compose ps
-                        docker compose logs
-                        exit 1
-                      ;;
-                    esac
-                  done
-                  exit 1
+                while status="$(docker inspect --format="{{if .Config.Healthcheck}}{{print .State.Health.Status}}{{end}}" "$(docker compose ps -q php)")"; do
+                  case $status in
+                    starting) sleep 1;;
+                    healthy) exit 0;;
+                    unhealthy)
+                      docker compose ps
+                      docker compose logs
+                      exit 1
+                    ;;
+                  esac
+                done
+                exit 1
             - name: Check HTTP reachability
               run: curl http://localhost
             - name: Check HTTPS reachability
               run: curl -k https://localhost
+            - name: Create test database
+              run: |
+                docker compose exec -T php bin/console -e test doctrine:database:create
+                docker compose exec -T php bin/console -e test doctrine:migrations:migrate --no-interaction
+            - name: PHPUnit
+              run: docker compose exec -T php bin/phpunit
+            - name: Doctrine Schema Validator
+              run: docker compose exec -T php bin/console doctrine:schema:validate --skip-sync
