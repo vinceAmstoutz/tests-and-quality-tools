@@ -15,7 +15,7 @@ services:
       interval: 10s
       timeout: 3s
       retries: 3
-      start_period: 30s
+      start_period: 1m
     environment:
       DATABASE_URL: postgresql://${POSTGRES_USER:-app}:${POSTGRES_PASSWORD:-!ChangeMe!}@database:5432/${POSTGRES_DB:-app}?serverVersion=${POSTGRES_VERSION:-14}
   
