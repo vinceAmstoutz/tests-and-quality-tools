@@ -73,7 +73,7 @@ bash: ## Log into the PHP docker container
 logs: ## Show live logs
 	@$(DOCKER_COMP) logs --tail=0 --follow
 
-check: ## Docker check
+check: ## Docker check php container
 	@$(DOCKER) info > /dev/null 2>&1                                                                   # Docker is up
 	@test '"healthy"' = `$(DOCKER) inspect --format "{{json .State.Health.Status }}" tests-and-quality-tools-php-1` # PHP container is up and healthy
 
@@ -105,7 +105,7 @@ lint-php: ## Lint files with php-cs-fixer for src & tests folders
 	@$(PHP_CS_FIXER) fix tests --allow-risky=yes --dry-run
 
 ## —— Code Quality reports 📊 ——————————————————————————————————————————————————
-ci: ##Execute CI locally
+ci: ## Execute CI locally (For Windows, WSL is required)
 	$(EXEC_PHP) ./bin/act
 coverage: ## Create the code coverage report with PHPUnit
 	$(EXEC_PHP) -d xdebug.enable=1 -d xdebug.mode=coverage -d memory_limit=-1 vendor/bin/phpunit --coverage-html=var/coverage
