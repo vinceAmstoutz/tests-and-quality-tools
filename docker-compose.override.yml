@@ -17,18 +17,21 @@ services:
     extra_hosts:
       # Ensure that host.docker.internal is correctly defined on Linux
       - host.docker.internal:host-gateway
-
   caddy:
     volumes:
       - ./public:/srv/app/public:ro
       - ./docker/caddy/Caddyfile:/etc/caddy/Caddyfile:ro
-
 ###> doctrine/doctrine-bundle ###
   database:
     ports:
       # To allow the host machine to access the ports below, modify the lines below.
-      # For example, to allow the host to connect to port 3306 on the container, you would change
-      # "3306" to "3306:3306". Where the first port is exposed to the host and the second is the container port.
+      # Where the first port is exposed to the host and the second is the container port.
       # See https://docs.docker.com/compose/compose-file/compose-file-v3/#ports for more information.
       - '5433:5432'
 ###< doctrine/doctrine-bundle ###
+
+###> symfony/mailer ###
+  mailer:
+    image: schickling/mailcatcher
+    ports: [1025, 1080]
+###< symfony/mailer ###
