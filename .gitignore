@@ -1,4 +1,5 @@
 /bin/act
+/docker/db
 ###> symfony/framework-bundle ###
 /.env.local
 /.env.local.php
