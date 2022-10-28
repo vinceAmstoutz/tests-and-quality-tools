@@ -24,12 +24,6 @@ if [ "$1" = 'php-fpm' ] || [ "$1" = 'php' ] || [ "$1" = 'bin/console' ]; then
 
 	if [ "$APP_ENV" != 'prod' ]; then
 		composer install --prefer-dist --no-progress --no-interaction
-		bin/console doctrine:database:create  --if-not-exists
-		bin/console doctrine:migrations:migrate --no-interaction
-		bin/console doctrine:fixtures:load --no-interaction
-		bin/console doctrine:database:create  --env test --if-not-exists
-		bin/console doctrine:migrations:migrate --env test --no-interaction
-		bin/console doctrine:fixtures:load --no-interaction  --env test
 	fi
 
 	if grep -q ^DATABASE_URL= .env; then
