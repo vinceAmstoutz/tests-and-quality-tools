@@ -10,3 +10,11 @@ Feature:
     Scenario: It receives a response from Symfony's kernel
         When a demo scenario sends a request to "/"
         Then the response should be received
+
+    Scenario: I can navigate to the homepage
+        When I am on the homepage
+        Then the response status code should be 200
+
+    Scenario: I can open the homepage in the Browser
+        When I am on the homepage
+        Then I should see a "body" element

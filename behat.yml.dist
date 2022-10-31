@@ -7,3 +7,8 @@ default:
     extensions:
         FriendsOfBehat\SymfonyExtension:
             bootstrap: tests/bootstrap.php
+        Behat\MinkExtension:
+            base_url: '%env(BASE_URL)%'
+            sessions:
+                default:
+                    symfony: ~
