@@ -40,5 +40,7 @@ jobs:
                 docker compose exec -T php bin/console -e test doctrine:fixtures:load --no-interaction
             - name: PHPUnit
               run: docker compose exec -T php bin/phpunit
+            - name: Behat
+              run: docker compose exec -T -e APP_ENV=test php ./vendor/bin/behat
             - name: Doctrine Schema Validator
               run: docker compose exec -T php bin/console doctrine:schema:validate --skip-sync
