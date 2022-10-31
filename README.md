@@ -3,7 +3,7 @@
 PHP tests & code analysis
 =========================
 
-> A bad test is equivalent to no test
+> A bad test is equivalent to no test!
 
 :warning: unit tests != integration tests != functional tests != end to end tests
 
@@ -11,7 +11,7 @@ PHP tests & code analysis
 ----------
 Basic & advanced practice of :
 - TDD (Test Driven Development for **unit, integration & functional tests**)  - `PHPUnit`
-- BDD (Behavior Driven Development for **end to end tests** ) - `Symfony Panther & Behat`
+- BDD (Behavior Driven Development for **end to end tests** ) - `Behat & PHPSpec` and complete it with the newest E2E solution `symfony/panther`. 
 - Code analysis - `PHPStan` & `PHP CS Fixer` & `Decomplex web tool`.
   
 With a blank `Symfony` project to practice them and I take the opportunity to practice SOLID, KISS and other code quality principles.
@@ -22,8 +22,10 @@ With a blank `Symfony` project to practice them and I take the opportunity to pr
 - `PHP 8.1`
 - `Docker` 
 - `PHPUnit 9.5`
-- `PHPStan 1.8`
-- `Behat 3.11` (with Symfony's HTTP Client and probably Goutte driver after)
+- `PHPStan 1.8`*
+- `Symfony Panther 2.0.1`
+- `Behat 3.11` (using Symfony's HTTP Client)
+- `PHPSpec` [**planned**]
 - `PHP CS Fixer 3.11`
   
 :gift: Pros tips
