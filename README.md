@@ -5,7 +5,7 @@ PHP tests & code analysis
 
 > A bad test is equivalent to no test
 
-:warning: unit tests != integration tests != functional tests (end to end tests)
+:warning: unit tests != integration tests != functional tests != end to end tests
 
 :brain: Intention
 ----------
@@ -23,7 +23,7 @@ With a blank `Symfony` project to practice them and I take the opportunity to pr
 - `Docker` 
 - `PHPUnit 9.5`
 - `PHPStan 1.8`
-- `Behat 3.11`
+- `Behat 3.11` (with Symfony's HTTP Client and probably Goutte driver after)
 - `PHP CS Fixer 3.11`
   
 :gift: Pros tips
