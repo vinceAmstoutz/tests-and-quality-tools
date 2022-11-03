@@ -74,9 +74,9 @@ logs: ## Show live logs
 	@$(DOCKER_COMP) logs --tail=0 --follow
 
 check: ## Docker check php container
-	@$(DOCKER) info > /dev/null 2>&1                                                                   # Docker is up
-	@test '"healthy"' = `$(DOCKER) inspect --format "{{json .State.Health.Status }}" tests-and-quality-tools-php-1` # PHP container is up and healthy
-
+	@$(DOCKER) info > /dev/null 2>&1
+	@echo PHP service STATUS : `$(DOCKER) inspect --format "{{json .State.Health.Status }}" tests-and-quality-tools-php-1`
+	
 ## —— Project 🐝 ———————————————————————————————————————————————————————————————
 bdd: ## Build the DB, control the schema validity, load fixtures and check the migration status (see --env option)
 	@$(eval APP_ENV ?= dev)
