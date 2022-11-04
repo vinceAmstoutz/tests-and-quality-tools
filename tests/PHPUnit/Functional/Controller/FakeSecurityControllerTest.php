@@ -87,17 +87,17 @@ class FakeSecurityControllerTest extends WebTestCase
         $this->assertResponseRedirects('/auth', Response::HTTP_FOUND);
     }
 
-    public function tesAdminAccessWithUnSufficientRole(): void
+    public function testAdminAccessWithUnSufficientRole(): void
     {
         $client = static::createClient();
 
         $this->login($client, 'user_test');
 
         $client->request('GET', '/admin');
-        $this->assertResponseStatusCodeSame(response::HTTP_FORBIDDEN);
+        $this->assertResponseStatusCodeSame(Response::HTTP_FORBIDDEN);
     }
 
-    public function tesAdminAccessWithSufficientRole(): void
+    public function testAdminAccessWithSufficientRole(): void
     {
         $client = static::createClient();
 
@@ -106,5 +106,22 @@ class FakeSecurityControllerTest extends WebTestCase
         $client->request('GET', '/admin');
         $this->assertResponseIsSuccessful();
         $this->assertSelectorTextContains('h1', 'Hello admin test.admin@app.com!');
+    }
+
+    public function testLogoutWhenConnected(): void
+    {
+        $client = static::createClient();
+
+        $this->login($client, 'user_admin');
+        $client->request('GET', 'logout');
+        $this->assertResponseRedirects('http://localhost/', Response::HTTP_FOUND);
+    }
+
+    public function testLogoutWhenNotConnected(): void
+    {
+        $client = static::createClient();
+
+        $client->request('GET', 'logout');
+        $this->assertResponseRedirects('http://localhost/', Response::HTTP_FOUND);
     }
 }
