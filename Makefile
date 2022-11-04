@@ -104,6 +104,7 @@ lint-php: ## Lint files with php-cs-fixer for src & tests folders
 
 ## —— Code Quality reports 📊 ——————————————————————————————————————————————————
 ci: ## Execute CI locally (For Windows, WSL is required)
-	$(EXEC_PHP) act
+	act
 coverage: ## Create the code coverage report with PHPUnit
-	$(EXEC_PHP) -d xdebug.enable=1 -d xdebug.mode=coverage -d memory_limit=-1 vendor/bin/phpunit --coverage-html=var/coverage
+	$(PHP_CONT) env XDEBUG_MODE=coverage env MEMORY_LIMIT=-1 env XDEBUG_ENABLE=1 ./bin/phpunit --coverage-html=var/coverage
+	open var/coverage/index.html
