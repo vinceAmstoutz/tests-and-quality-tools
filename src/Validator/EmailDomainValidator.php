@@ -11,8 +11,6 @@ class EmailDomainValidator extends ConstraintValidator
 {
     public function validate(mixed $value, Constraint $constraint): void
     {
-        /* @var App\Validator\EmailDomain $constraint */
-
         if (null === $value || '' === $value) {
             return;
         }
