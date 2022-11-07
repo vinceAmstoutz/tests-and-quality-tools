@@ -1,4 +1,4 @@
-[![CI](https://github.com/vinceAmstoutz/tests-and-quality-tools/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/vinceAmstoutz/tests-and-quality-tools/actions/workflows/ci.yml)
+[![CI status badge](https://github.com/vinceAmstoutz/tests-and-quality-tools/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/vinceAmstoutz/tests-and-quality-tools/actions/workflows/ci.yml) ![Code coverage badge](badge-coverage.svg) 
 
 PHP tests & code analysis
 =========================
