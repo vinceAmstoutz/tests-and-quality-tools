@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1667831501">
-  <project timestamp="1667831501">
+<coverage generated="1667832936">
+  <project timestamp="1667832936">
     <file name="/srv/app/src/Controller/EmailController.php">
       <class name="App\Controller\EmailController" namespace="global">
         <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="6" elements="7" coveredelements="7"/>
@@ -41,18 +41,9 @@
     </file>
     <file name="/srv/app/src/DataFixtures/UserFixtures.php">
       <class name="App\DataFixtures\UserFixtures" namespace="global">
-        <metrics complexity="2" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="0" elements="9" coveredelements="0"/>
+        <metrics complexity="2" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
       </class>
-      <line num="14" type="method" name="load" visibility="public" complexity="2" crap="6" count="0"/>
-      <line num="16" type="stmt" count="0"/>
-      <line num="18" type="stmt" count="0"/>
-      <line num="19" type="stmt" count="0"/>
-      <line num="20" type="stmt" count="0"/>
-      <line num="21" type="stmt" count="0"/>
-      <line num="22" type="stmt" count="0"/>
-      <line num="24" type="stmt" count="0"/>
-      <line num="26" type="stmt" count="0"/>
-      <metrics loc="29" ncloc="29" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="0" elements="9" coveredelements="0"/>
+      <metrics loc="32" ncloc="29" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
     <file name="/srv/app/src/Entity/InvitationCode.php">
       <class name="App\Entity\InvitationCode" namespace="global">
@@ -129,40 +120,19 @@
     </file>
     <file name="/srv/app/src/Repository/InvitationCodeRepository.php">
       <class name="App\Repository\InvitationCodeRepository" namespace="global">
-        <metrics complexity="5" methods="3" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="1" elements="10" coveredelements="2"/>
+        <metrics complexity="5" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
       </class>
       <line num="19" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="9"/>
       <line num="21" type="stmt" count="9"/>
-      <line num="24" type="method" name="save" visibility="public" complexity="2" crap="6" count="0"/>
-      <line num="26" type="stmt" count="0"/>
-      <line num="28" type="stmt" count="0"/>
-      <line num="29" type="stmt" count="0"/>
-      <line num="33" type="method" name="remove" visibility="public" complexity="2" crap="6" count="0"/>
-      <line num="35" type="stmt" count="0"/>
-      <line num="37" type="stmt" count="0"/>
-      <line num="38" type="stmt" count="0"/>
-      <metrics loc="67" ncloc="36" classes="1" methods="3" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="1" elements="10" coveredelements="2"/>
+      <metrics loc="73" ncloc="36" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
     </file>
     <file name="/srv/app/src/Repository/UserRepository.php">
       <class name="App\Repository\UserRepository" namespace="global">
-        <metrics complexity="7" methods="4" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="1" elements="15" coveredelements="2"/>
+        <metrics complexity="7" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
       </class>
       <line num="22" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="11"/>
       <line num="24" type="stmt" count="11"/>
-      <line num="27" type="method" name="save" visibility="public" complexity="2" crap="6" count="0"/>
-      <line num="29" type="stmt" count="0"/>
-      <line num="31" type="stmt" count="0"/>
-      <line num="32" type="stmt" count="0"/>
-      <line num="36" type="method" name="remove" visibility="public" complexity="2" crap="6" count="0"/>
-      <line num="38" type="stmt" count="0"/>
-      <line num="40" type="stmt" count="0"/>
-      <line num="41" type="stmt" count="0"/>
-      <line num="48" type="method" name="upgradePassword" visibility="public" complexity="2" crap="6" count="0"/>
-      <line num="50" type="stmt" count="0"/>
-      <line num="51" type="stmt" count="0"/>
-      <line num="54" type="stmt" count="0"/>
-      <line num="56" type="stmt" count="0"/>
-      <metrics loc="84" ncloc="50" classes="1" methods="4" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="1" elements="15" coveredelements="2"/>
+      <metrics loc="92" ncloc="50" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
     </file>
     <file name="/srv/app/src/Security/AppFakeAuthenticator.php">
       <class name="App\Security\AppFakeAuthenticator" namespace="global">
@@ -212,6 +182,6 @@
       <line num="29" type="stmt" count="2"/>
       <metrics loc="32" ncloc="32" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="8" elements="10" coveredelements="10"/>
     </file>
-    <metrics files="13" loc="638" ncloc="544" classes="12" methods="39" coveredmethods="27" conditionals="0" coveredconditionals="0" statements="96" coveredstatements="64" elements="135" coveredelements="91"/>
+    <metrics files="13" loc="655" ncloc="544" classes="11" methods="33" coveredmethods="27" conditionals="0" coveredconditionals="0" statements="72" coveredstatements="64" elements="105" coveredelements="91"/>
   </project>
 </coverage>
