@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1667830348">
-  <project timestamp="1667830348">
+<coverage generated="1667830917">
+  <project timestamp="1667830917">
     <file name="/srv/app/src/Controller/EmailController.php">
       <class name="App\Controller\EmailController" namespace="global">
         <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="6" elements="7" coveredelements="7"/>
