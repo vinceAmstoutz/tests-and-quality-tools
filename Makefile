@@ -107,4 +107,5 @@ ci: ## Execute CI locally (For Windows, WSL is required)
 	act
 coverage: ## Create the code coverage report with PHPUnit
 	$(PHP_CONT) env XDEBUG_MODE=coverage env MEMORY_LIMIT=-1 env XDEBUG_ENABLE=1 ./bin/phpunit --coverage-html=var/coverage
+coverage-open:	
 	open var/coverage/index.html
