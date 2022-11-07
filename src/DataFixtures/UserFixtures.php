@@ -11,6 +11,9 @@ use Doctrine\Bundle\FixturesBundle\Fixture;
 
 class UserFixtures extends Fixture
 {
+    /**
+     * @codeCoverageIgnore
+     */
     public function load(ObjectManager $manager): void
     {
         $faker = FakerFactory::create();
