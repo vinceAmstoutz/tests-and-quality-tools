@@ -24,6 +24,8 @@ if [ "$1" = 'php-fpm' ] || [ "$1" = 'php' ] || [ "$1" = 'bin/console' ]; then
 
 	if [ "$APP_ENV" != 'prod' ]; then
 		composer install --prefer-dist --no-progress --no-interaction
+		mkdir --parents tools/php-cs-fixer
+		composer require --working-dir=tools/php-cs-fixer friendsofphp/php-cs-fixer
 	fi
 
 	if grep -q ^DATABASE_URL= .env; then

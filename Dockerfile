@@ -96,6 +96,8 @@ COPY composer.* symfony.* ./
 RUN set -eux; \
     if [ -f composer.json ]; then \
 		composer install --prefer-dist --no-dev --no-autoloader --no-scripts --no-progress; \
+		mkdir --parents tools/php-cs-fixer; \
+		composer require --working-dir=tools/php-cs-fixer friendsofphp/php-cs-fixer; \
 		composer clear-cache; \
     fi
 
@@ -110,6 +112,7 @@ RUN set -eux; \
 		composer dump-env prod; \
 		composer run-script --no-dev post-install-cmd; \
 		chmod +x bin/console; sync; \
+		chmod a+x tools/php-cs-fixer; \
     fi
 
 # Dev image
