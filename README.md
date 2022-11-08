@@ -1,4 +1,6 @@
-[![CI status badge](https://github.com/vinceAmstoutz/tests-and-quality-tools/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/vinceAmstoutz/tests-and-quality-tools/actions/workflows/ci.yml) ![Code coverage badge](badge-coverage.svg) 
+[![CI status badge](https://github.com/vinceAmstoutz/tests-and-quality-tools/actions/workflows/ci.yaml/badge.svg?branch=main)](https://github.com/vinceAmstoutz/tests-and-quality-tools/actions/workflows/ci.yml)
+[![PHP lint status badge](https://github.com/vinceAmstoutz/tests-and-quality-tools/actions/workflows/lint.yaml/badge.svg)](https://github.com/vinceAmstoutz/tests-and-quality-tools/actions/workflows/lint.yaml)
+![Code coverage badge](badge-coverage.svg) 
 
 PHP tests & code analysis
 =========================
