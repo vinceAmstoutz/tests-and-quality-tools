@@ -2,6 +2,12 @@
 
 declare(strict_types=1);
 
+/*
+ * (c) Vincent AMSTOUTZ <vincent.amstoutz.dev@gmail.com>
+ *
+ * Unlicensed
+ */
+
 namespace App\Tests\PHPUnit\Unit\Repository;
 
 use App\Entity\User;
@@ -20,7 +26,7 @@ class UserRepositoryTest extends KernelTestCase
         $kernel =
             self::bootKernel([
                 'environment' => 'test',
-                'debug'       => false,
+                'debug' => false,
             ]);
 
         $this->entityManager = $kernel->getContainer()
@@ -31,14 +37,14 @@ class UserRepositoryTest extends KernelTestCase
     public function testCount(): void
     {
         $users = $this->entityManager->getRepository(User::class)->count([]);
-        $this->assertEquals(10, $users);
+        $this->assertSame(10, $users);
     }
 
     protected function tearDown(): void
     {
         parent::tearDown();
 
-        //recommended to avoid memory leaks
+        // recommended to avoid memory leaks
         $this->entityManager->close();
         $this->entityManager = null;
     }

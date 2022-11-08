@@ -2,13 +2,19 @@
 
 declare(strict_types=1);
 
+/*
+ * (c) Vincent AMSTOUTZ <vincent.amstoutz.dev@gmail.com>
+ *
+ * Unlicensed
+ */
+
 namespace App\Tests\PHPUnit\Unit\Trait;
 
 use Symfony\Component\Validator\ConstraintViolation;
 
 trait ErrorTrait
 {
-    public function assertHasError(Object $object, int $expected = 0): void
+    public function assertHasError(object $object, int $expected = 0): void
     {
         $messages = [];
         self::bootKernel();
@@ -17,7 +23,7 @@ trait ErrorTrait
 
         /** @var ConstraintViolation $error */
         foreach ($errors as $error) {
-            $messages[] = $error->getPropertyPath() . ' => ' . $error->getMessage();
+            $messages[] = $error->getPropertyPath().' => '.$error->getMessage();
         }
 
         $this->assertCount($expected, $errors, implode(',', $messages));

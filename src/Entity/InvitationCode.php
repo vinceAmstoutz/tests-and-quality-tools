@@ -1,11 +1,17 @@
 <?php
 
+/*
+ * (c) Vincent AMSTOUTZ <vincent.amstoutz.dev@gmail.com>
+ *
+ * Unlicensed
+ */
+
 namespace App\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
 use App\Repository\InvitationCodeRepository;
-use Symfony\Component\Validator\Constraints as Assert;
+use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: InvitationCodeRepository::class)]
 #[UniqueEntity('code')]

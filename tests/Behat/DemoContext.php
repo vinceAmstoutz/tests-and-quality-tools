@@ -2,6 +2,12 @@
 
 declare(strict_types=1);
 
+/*
+ * (c) Vincent AMSTOUTZ <vincent.amstoutz.dev@gmail.com>
+ *
+ * Unlicensed
+ */
+
 namespace App\Tests\Behat;
 
 use Behat\MinkExtension\Context\MinkContext;
@@ -41,7 +47,7 @@ final class DemoContext extends MinkContext
      */
     public function theResponseShouldBeReceived(): void
     {
-        if ($this->response === null) {
+        if (null === $this->response) {
             throw new \RuntimeException('No response received');
         }
     }

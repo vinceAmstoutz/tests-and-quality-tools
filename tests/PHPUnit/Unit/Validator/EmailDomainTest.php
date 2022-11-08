@@ -2,12 +2,18 @@
 
 declare(strict_types=1);
 
+/*
+ * (c) Vincent AMSTOUTZ <vincent.amstoutz.dev@gmail.com>
+ *
+ * Unlicensed
+ */
+
 namespace App\Tests\PHPUnit\Unit\Validator;
 
 use App\Validator\EmailDomain;
 use PHPUnit\Framework\TestCase;
-use Symfony\Component\Validator\Exception\MissingOptionsException;
 use Symfony\Component\Validator\Exception\ConstraintDefinitionException;
+use Symfony\Component\Validator\Exception\MissingOptionsException;
 
 class EmailDomainTest extends TestCase
 {
@@ -31,6 +37,6 @@ class EmailDomainTest extends TestCase
         ];
 
         $domain = new EmailDomain(['blocked' => $blackList]);
-        $this->assertEquals($blackList, $domain->blocked);
+        $this->assertSame($blackList, $domain->blocked);
     }
 }

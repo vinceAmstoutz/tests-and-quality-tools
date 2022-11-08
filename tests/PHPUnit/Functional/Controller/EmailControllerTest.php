@@ -2,6 +2,12 @@
 
 declare(strict_types=1);
 
+/*
+ * (c) Vincent AMSTOUTZ <vincent.amstoutz.dev@gmail.com>
+ *
+ * Unlicensed
+ */
+
 namespace App\Tests\PHPUnit\Functional\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;

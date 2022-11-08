@@ -2,6 +2,12 @@
 
 declare(strict_types=1);
 
+/*
+ * (c) Vincent AMSTOUTZ <vincent.amstoutz.dev@gmail.com>
+ *
+ * Unlicensed
+ */
+
 namespace App\Validator;
 
 use Symfony\Component\Validator\Constraint;
@@ -22,12 +28,12 @@ class EmailDomain extends Constraint
     {
         parent::__construct($options);
 
-        if (!is_array($options['blocked']))
+        if (!\is_array($options['blocked'])) {
             throw new ConstraintDefinitionException('The blocked option must be an array of blocked domain');
+        }
     }
 
     /**
-     *
      * @return array<string>
      */
     public function getRequiredOptions()

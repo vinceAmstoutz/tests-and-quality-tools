@@ -1,5 +1,11 @@
 <?php
 
+/*
+ * (c) Vincent AMSTOUTZ <vincent.amstoutz.dev@gmail.com>
+ *
+ * Unlicensed
+ */
+
 namespace App\Repository;
 
 use App\Entity\InvitationCode;

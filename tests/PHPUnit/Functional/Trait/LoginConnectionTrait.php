@@ -2,11 +2,17 @@
 
 declare(strict_types=1);
 
+/*
+ * (c) Vincent AMSTOUTZ <vincent.amstoutz.dev@gmail.com>
+ *
+ * Unlicensed
+ */
+
 namespace App\Tests\PHPUnit\Functional\Trait;
 
 use App\Entity\User;
-use Symfony\Bundle\FrameworkBundle\KernelBrowser;
 use Liip\TestFixturesBundle\Services\DatabaseToolCollection;
+use Symfony\Bundle\FrameworkBundle\KernelBrowser;
 
 trait LoginConnectionTrait
 {
@@ -15,7 +21,7 @@ trait LoginConnectionTrait
         $usersFixtures = static::getContainer()
             ->get(DatabaseToolCollection::class)
             ->get()->loadAliceFixture([
-                dirname(__DIR__, 2) . '/YamlFixtures/users.yaml',
+                \dirname(__DIR__, 2).'/YamlFixtures/users.yaml',
             ]);
 
         /** @var User */

@@ -2,13 +2,19 @@
 
 declare(strict_types=1);
 
+/*
+ * (c) Vincent AMSTOUTZ <vincent.amstoutz.dev@gmail.com>
+ *
+ * Unlicensed
+ */
+
 namespace App\Tests\PHPUnit\Unit\Entity;
 
 use App\Entity\InvitationCode;
 use App\Tests\PHPUnit\Unit\Trait\ErrorTrait;
-use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 use Liip\TestFixturesBundle\Services\DatabaseToolCollection;
 use Liip\TestFixturesBundle\Services\DatabaseTools\AbstractDatabaseTool;
+use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
 class InvitationCodeTest extends KernelTestCase
 {
@@ -17,7 +23,7 @@ class InvitationCodeTest extends KernelTestCase
     /** @var AbstractDatabaseTool */
     protected $databaseTool;
 
-    public function setUp(): void
+    protected function setUp(): void
     {
         parent::setUp();
 
@@ -56,8 +62,7 @@ class InvitationCodeTest extends KernelTestCase
     public function testDuplicateCode(): void
     {
         $this->databaseTool->loadAliceFixture([
-
-            dirname(__DIR__, 2) . '/YamlFixtures/invitation_codes.yaml',
+            \dirname(__DIR__, 2).'/YamlFixtures/invitation_codes.yaml',
         ]);
 
         $this->assertHasError($this->getEntity()->setCode('54321'), 1);

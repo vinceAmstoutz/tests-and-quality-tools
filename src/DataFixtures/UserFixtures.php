@@ -2,12 +2,18 @@
 
 declare(strict_types=1);
 
+/*
+ * (c) Vincent AMSTOUTZ <vincent.amstoutz.dev@gmail.com>
+ *
+ * Unlicensed
+ */
+
 namespace App\DataFixtures;
 
 use App\Entity\User;
-use Faker\Factory as FakerFactory;
-use Doctrine\Persistence\ObjectManager;
 use Doctrine\Bundle\FixturesBundle\Fixture;
+use Doctrine\Persistence\ObjectManager;
+use Faker\Factory as FakerFactory;
 
 class UserFixtures extends Fixture
 {
@@ -18,7 +24,7 @@ class UserFixtures extends Fixture
     {
         $faker = FakerFactory::create();
 
-        for ($i = 0; $i < 10; $i++) {
+        for ($i = 0; $i < 10; ++$i) {
             $user = (new User())
                 ->setEmail($faker->email())
                 ->setRoles([])

@@ -2,17 +2,23 @@
 
 declare(strict_types=1);
 
+/*
+ * (c) Vincent AMSTOUTZ <vincent.amstoutz.dev@gmail.com>
+ *
+ * Unlicensed
+ */
+
 namespace App\Tests\PHPUnit\Unit\EventSubscriber;
 
-use PHPUnit\Framework\TestCase;
-use Symfony\Component\Mime\Email;
 use App\EventSubscriber\ExceptionSubscriber;
 use PHPUnit\Framework\MockObject\MockObject;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Mailer\MailerInterface;
-use Symfony\Component\HttpKernel\KernelInterface;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcher;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Event\ExceptionEvent;
+use Symfony\Component\HttpKernel\KernelInterface;
+use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mime\Email;
 
 class ExceptionSubscriberTest extends TestCase
 {
@@ -71,7 +77,7 @@ class ExceptionSubscriberTest extends TestCase
         $mailer->expects($this->once())->method('send');
 
         // $subscriber->onException($event);
-        // MUST use a dispatcher, as below, to also check if the method exist  
+        // MUST use a dispatcher, as below, to also check if the method exist
         $dispatcher = new EventDispatcher();
         $dispatcher->addSubscriber($subscriber);
         $dispatcher->dispatch($event);

@@ -2,16 +2,22 @@
 
 declare(strict_types=1);
 
+/*
+ * (c) Vincent AMSTOUTZ <vincent.amstoutz.dev@gmail.com>
+ *
+ * Unlicensed
+ */
+
 namespace App\Tests\PHPUnit\Unit\Repository;
 
-use Exception;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Mapping\Entity;
+use Exception;
 use PHPUnit\Framework\MockObject\MockObject;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
 /**
- * Allow to test if remove and save methods are presents in repositories
+ * Allow to test if remove and save methods are presents in repositories.
  */
 class ServiceEntityRepositoryTest extends KernelTestCase
 {
@@ -22,7 +28,7 @@ class ServiceEntityRepositoryTest extends KernelTestCase
         $kernel =
             self::bootKernel([
                 'environment' => 'test',
-                'debug'       => false,
+                'debug' => false,
             ]);
 
         $this->em = $kernel->getContainer()
@@ -126,7 +132,7 @@ class ServiceEntityRepositoryTest extends KernelTestCase
 
     public function getEntityRepositoryMock(mixed $entity): MockObject|Entity
     {
-        $entityRepository = get_class($this->em->getRepository($entity));
+        $entityRepository = \get_class($this->em->getRepository($entity));
 
         return $this->getMockBuilder($entityRepository)
             ->disableOriginalConstructor()
@@ -144,13 +150,13 @@ class ServiceEntityRepositoryTest extends KernelTestCase
                 ->method($method)
                 ->with(new $entity(), $isFlush);
         } catch (Exception) {
-            $this->fail($entity . ' repository\'s doesn\'t have a ' . $method . ' method! You MUST implement it!');
+            $this->fail($entity.' repository\'s doesn\'t have a '.$method.' method! You MUST implement it!');
         }
     }
 
     public function isFlush(bool $isFlush): bool
     {
-        return isset($isFlush) && $isFlush !== false ?? $isFlush;
+        return isset($isFlush) && false !== $isFlush ?? $isFlush;
     }
 
     protected function tearDown(): void

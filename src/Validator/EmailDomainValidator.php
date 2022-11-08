@@ -2,6 +2,12 @@
 
 declare(strict_types=1);
 
+/*
+ * (c) Vincent AMSTOUTZ <vincent.amstoutz.dev@gmail.com>
+ *
+ * Unlicensed
+ */
+
 namespace App\Validator;
 
 use Symfony\Component\Validator\Constraint;
@@ -17,7 +23,7 @@ class EmailDomainValidator extends ConstraintValidator
 
         $domain = $this->getDomain($value);
 
-        if (in_array($domain, $constraint->blocked)) {
+        if (\in_array($domain, $constraint->blocked, true)) {
             $this->context->buildViolation($constraint->message)
                 ->setParameter('{{ value }}', $value)
                 ->addViolation();
@@ -26,6 +32,6 @@ class EmailDomainValidator extends ConstraintValidator
 
     private function getDomain(string $email): string
     {
-        return substr($email, strpos($email, '@') + 1);
+        return mb_substr($email, mb_strpos($email, '@') + 1);
     }
 }

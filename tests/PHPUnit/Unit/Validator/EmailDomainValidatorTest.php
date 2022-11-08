@@ -2,6 +2,12 @@
 
 declare(strict_types=1);
 
+/*
+ * (c) Vincent AMSTOUTZ <vincent.amstoutz.dev@gmail.com>
+ *
+ * Unlicensed
+ */
+
 namespace App\Tests\PHPUnit\Unit\Validator;
 
 use App\Validator\EmailDomain;
@@ -21,7 +27,7 @@ class EmailDomainValidatorTest extends ConstraintValidatorTestCase
     public function testValidateOnNull(EmailDomain $constraint): void
     {
         $validation = $this->validator->validate(null, $constraint);
-        $this->assertEquals(null, $validation);
+        $this->assertNull($validation);
     }
 
     /**
@@ -30,7 +36,7 @@ class EmailDomainValidatorTest extends ConstraintValidatorTestCase
     public function testValidateUsageOnEmptyString(EmailDomain $constraint): void
     {
         $validation = $this->validator->validate('', $constraint);
-        $this->assertEquals(null, $validation);
+        $this->assertNull($validation);
     }
 
     /**
@@ -51,7 +57,7 @@ class EmailDomainValidatorTest extends ConstraintValidatorTestCase
 
         $this->validator->validate($value, $constraint);
 
-        $this->assertEquals($this->context->getViolations()->count(), 1);
+        $this->assertSame($this->context->getViolations()->count(), 1);
     }
 
     /**
@@ -62,7 +68,7 @@ class EmailDomainValidatorTest extends ConstraintValidatorTestCase
         return ['blocked' => [
             'yopmail.com',
             'yoopala.com',
-            'baddomain.com'
+            'baddomain.com',
         ]];
     }
 

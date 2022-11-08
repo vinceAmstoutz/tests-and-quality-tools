@@ -2,13 +2,19 @@
 
 declare(strict_types=1);
 
+/*
+ * (c) Vincent AMSTOUTZ <vincent.amstoutz.dev@gmail.com>
+ *
+ * Unlicensed
+ */
+
 namespace App\Controller;
 
-use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mime\Email;
+use Symfony\Component\Routing\Annotation\Route;
 
 class EmailController extends AbstractController
 {
@@ -21,6 +27,6 @@ class EmailController extends AbstractController
             ->html('Hello admin! Enjoy this email :)');
         $mailer->send($email);
 
-        return new Response("Email sent!");
+        return new Response('Email sent!');
     }
 }

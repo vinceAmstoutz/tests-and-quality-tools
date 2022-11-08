@@ -2,12 +2,18 @@
 
 declare(strict_types=1);
 
+/*
+ * (c) Vincent AMSTOUTZ <vincent.amstoutz.dev@gmail.com>
+ *
+ * Unlicensed
+ */
+
 namespace App\Tests\PHPUnit\Functional\Controller;
 
+use App\Tests\PHPUnit\Functional\Trait\LoginConnectionTrait;
+use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
-use App\Tests\PHPUnit\Functional\Trait\LoginConnectionTrait;
 
 class FakeSecurityControllerTest extends WebTestCase
 {
@@ -44,7 +50,7 @@ class FakeSecurityControllerTest extends WebTestCase
     }
 
     /**
-     * Never working if we have a frontend DOM override 
+     * Never working if we have a frontend DOM override
      * (use e2e tests instead)!
      */
     public function testLoginWithBadCredentials(): void
@@ -56,7 +62,7 @@ class FakeSecurityControllerTest extends WebTestCase
             'Sign in',
             [
                 'email' => 'john.doe@domain.fr',
-                'password' => 'fake_insecure_passwd'
+                'password' => 'fake_insecure_passwd',
             ],
             Request::METHOD_POST
         );
