@@ -31,9 +31,12 @@ help: ## Outputs this help screen
 ## —— Composer 🧙‍♂️ ————————————————————————————————————————————————————————————
 install: composer.lock ## Install vendors according to the current composer.lock file
 	@$(COMPOSER) install --no-progress --prefer-dist --optimize-autoloader
+	mkdir --parents tools/php-cs-fixer
+	@$(COMPOSER) install --working-dir=tools/php-cs-fixer friendsofphp/php-cs-fixer
 
 update: ## Update dependencies according to the composer.json file
 	@$(COMPOSER) update
+	@$(COMPOSER) update --working-dir=tools/php-cs-fixer friendsofphp/php-cs-fixer
 
 recipes: ## Check outdated recipes (Symfony Flex)
 	@$(COMPOSER) recipes -o
@@ -99,8 +102,7 @@ stan: ## Run PHPStan
 	@$(PHPSTAN) analyse -c phpstan.neon.dist --memory-limit 1G
 
 lint-php: ## Lint files with php-cs-fixer for src & tests folders
-	@$(PHP_CS_FIXER) fix src --allow-risky=yes --dry-run
-	@$(PHP_CS_FIXER) fix tests --allow-risky=yes --dry-run
+	@$(PHP_CS_FIXER) fix
 
 ## —— Code Quality reports 📊 ——————————————————————————————————————————————————
 ci: ## Execute CI locally (For Windows, WSL is required)
