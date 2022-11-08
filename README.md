@@ -22,11 +22,12 @@ With a blank `Symfony` project to practice them and I take the opportunity to pr
 - `PHP 8.1`
 - `Docker` 
 - `PHPUnit 9.5`
-- `PHPStan 1.8`*
-- `Symfony Panther 2.0.1`
+- `PHPStan 1.8`
+- `Symfony Panther 2.0`
 - `Behat 3.11` (using Symfony's HTTP Client)
 - `PHPSpec` [**planned**]
-- `PHP CS Fixer 3.11`
+- `PHP CS Fixer 3`
+- `nektos/act` (Run GitHub Actions locally)
   
 :gift: Pros tips
 ---------
