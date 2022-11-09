@@ -17,9 +17,10 @@ COMPOSER = $(PHP_CONT) composer
 SYMFONY  = $(PHP_CONT) bin/console
 
 # Executables: vendors
-PHPUNIT       = $(PHP_CONT) bin/phpunit
+PHPUNIT       = $(PHP_CONT) ./bin/phpunit
 PHPSTAN       = $(PHP_CONT) ./vendor/bin/phpstan
 PHP_CS_FIXER  = $(PHP_CONT) ./tools/php-cs-fixer/vendor/bin/php-cs-fixer
+BEHAT 		  = $(DOCKER_COMP) exec -T -e APP_ENV=test php ./vendor/bin/behat
 
 # Misc
 .DEFAULT_GOAL = help
@@ -96,6 +97,12 @@ test: phpunit.xml.dist ## Run PHP unit tests with optionnal suite and filter
 
 test-all: phpunit.xml.dist ## Run all PHPUnit tests
 	@$(PHPUNIT) --stop-on-failure
+
+behat-test: behat.yml.dist ## Run Behat tests with optionnal filter
+	@$(eval filter ?= '')
+	@$(BEHAT) $(filter)  --stop-on-failure
+behat-all: behat.yml.dist ## Run all Behat tests
+	@$(BEHAT) --stop-on-failure
 
 ## —— Coding standards ✨ ——————————————————————————————————————————————————————
 stan: ## Run PHPStan
