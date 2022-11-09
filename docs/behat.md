@@ -21,7 +21,11 @@ Getting started
 1. Install the dependency if it's not present in symfony the project by using : `composer require friends-of-behat/mink-extension friends-of-behat/mink-browserkit-driver friends-of-behat/symfony-extension --dev` 
    or to use `Goutte` (make real HTTP requests) :
    `composer require friends-of-behat/mink-extension friends-of-behat/mink-browserkit-driver behat/mink-goutte-driver --dev`
-2. Check the install by running : `./vendor/bin/behat -V`
+2. Check the install by : 
+   1. Go in the PHP container within : `make bash`
+   2. and the running : `./vendor/bin/behat -V`
+
+:bulb: Run Behat tests using `make behat-tests` or `make behat-test [path]`.
 
 Credits
 -------
