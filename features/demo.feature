@@ -10,6 +10,7 @@ Feature:
     Scenario: It receives a response from Symfony's kernel
         When a demo scenario sends a request to "/"
         Then the response should be received
+        And the response should be successful
 
     Scenario: I can navigate to the homepage
         When I am on the homepage

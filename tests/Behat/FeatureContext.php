@@ -46,4 +46,14 @@ final class FeatureContext extends MinkContext implements Context
             throw new \RuntimeException('No response received');
         }
     }
+
+    /**
+     * @Then the response should be successful
+     */
+    public function theResponseShouldBeSuccessful(): void
+    {
+        if (!$this->response->isSuccessful()) {
+            throw new \RuntimeException('Incorrect response');
+        }
+    }
 }
