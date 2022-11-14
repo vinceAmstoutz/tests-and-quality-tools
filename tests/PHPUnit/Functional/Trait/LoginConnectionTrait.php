@@ -18,8 +18,9 @@ trait LoginConnectionTrait
 {
     public function login(KernelBrowser $client, string $user = 'user_test'): void
     {
-        $usersFixtures = static::getContainer()
-            ->get(DatabaseToolCollection::class)
+        /** @var DatabaseToolCollection $databaseCollection */
+        $databaseCollection = static::getContainer()->get(DatabaseToolCollection::class);
+        $usersFixtures = $databaseCollection
             ->get()->loadAliceFixture([
                 \dirname(__DIR__, 2).'/YamlFixtures/users.yaml',
             ]);

@@ -29,6 +29,7 @@ class ExceptionSubscriberTest extends TestCase
 
     public function testOnExceptionSendEmail(): void
     {
+        /** @var MockObject */
         $mailer = $this->createMailerMock();
         $mailer->expects($this->once())
             ->method('send');
@@ -38,28 +39,33 @@ class ExceptionSubscriberTest extends TestCase
 
     public function testOnExceptionSendWithTheTrace(): void
     {
+        /** @var MockObject */
         $mailer = $this->createMailerMock();
         $mailer->expects($this->once())
             ->method('send')
             ->with(
                 $this->callback(function (Email $email) {
                     return
-                        str_contains($email->getTextBody(), 'ExceptionSubscriberTest')
-                        && str_contains($email->getTextBody(), 'Hello error');
+                        str_contains((string) $email->getTextBody(), 'ExceptionSubscriberTest')
+                        && str_contains((string) $email->getTextBody(), 'Hello error');
                 })
             );
         $this->dispatch($mailer);
     }
 
-    private function createMailerMock(): MailerInterface|MockObject
+    private function createMailerMock(): MockObject
     {
         return $this->getMockBuilder(MailerInterface::class)
             ->disableOriginalConstructor()
             ->getMock();
     }
 
-    private function dispatch(MailerInterface|MockObject $mailer): void
+    private function dispatch(MockObject $mailer): void
     {
+        /** @var MockObject */
+        $mailerMock = clone $mailer;
+
+        /** @var MailerInterface $mailer */
         $subscriber = new ExceptionSubscriber(
             $mailer,
             'app@domain.com',
@@ -74,7 +80,7 @@ class ExceptionSubscriberTest extends TestCase
 
         $event = new ExceptionEvent($httpKernel, new Request(), 1, new \Exception('Hello error'));
 
-        $mailer->expects($this->once())->method('send');
+        $mailerMock->expects($this->once())->method('send');
 
         // $subscriber->onException($event);
         // MUST use a dispatcher, as below, to also check if the method exist

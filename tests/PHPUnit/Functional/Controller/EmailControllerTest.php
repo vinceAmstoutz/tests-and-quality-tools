@@ -11,6 +11,7 @@ declare(strict_types=1);
 namespace App\Tests\PHPUnit\Functional\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+use Symfony\Component\Mime\RawMessage;
 
 class EmailControllerTest extends WebTestCase
 {
@@ -19,6 +20,7 @@ class EmailControllerTest extends WebTestCase
         $this->sendEmail();
         $this->assertResponseIsSuccessful();
 
+        /** @var RawMessage */
         $email = $this->getMailerMessage();
         $this->assertEmailHtmlBodyContains($email, 'Hello');
     }
@@ -28,6 +30,7 @@ class EmailControllerTest extends WebTestCase
         $this->sendEmail();
         $this->assertResponseIsSuccessful();
 
+        /** @var RawMessage */
         $email = $this->getMailerMessage();
         $this->assertEmailAddressContains($email, 'from', 'test.user@app.com');
         $this->assertEmailAddressContains($email, 'to', 'test.admin@app.com');

@@ -22,7 +22,7 @@ final class FeatureContext extends MinkContext implements Context
     /** @var KernelInterface */
     private $kernel;
 
-    /** @var Response|null */
+    /** @var Response */
     private $response;
 
     public function __construct(KernelInterface $kernel)

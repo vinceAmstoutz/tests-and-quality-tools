@@ -20,11 +20,12 @@ class EmailDomainValidator extends ConstraintValidator
         if (null === $value || '' === $value) {
             return;
         }
-
+        /** @var string $value */
         $domain = $this->getDomain($value);
 
-        if (\in_array($domain, $constraint->blocked, true)) {
-            $this->context->buildViolation($constraint->message)
+        /** @var EmailDomain $constraint */
+        if (\in_array($domain, (array) $constraint->blocked, true)) {
+            $this->context->buildViolation((string) $constraint->message)
                 ->setParameter('{{ value }}', $value)
                 ->addViolation();
         }

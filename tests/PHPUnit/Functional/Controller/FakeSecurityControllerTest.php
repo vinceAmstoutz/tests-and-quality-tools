@@ -40,7 +40,7 @@ class FakeSecurityControllerTest extends WebTestCase
         $this->assertSelectorNotExists('.alert.alert-danger');
     }
 
-    public function getLoginFormMinimalRequired(): ?\Generator
+    public function getLoginFormMinimalRequired(): \Generator
     {
         yield ['body form[method="post"]'];
         yield ['form input[type="email"][required]'];

@@ -25,9 +25,9 @@ class InvitationCodeTest extends KernelTestCase
 
     protected function setUp(): void
     {
-        parent::setUp();
-
-        $this->databaseTool = static::getContainer()->get(DatabaseToolCollection::class)->get();
+        /** @var DatabaseToolCollection $databaseCollection */
+        $databaseCollection = static::getContainer()->get(DatabaseToolCollection::class);
+        $this->databaseTool = $databaseCollection->get();
     }
 
     public function getEntity(): InvitationCode

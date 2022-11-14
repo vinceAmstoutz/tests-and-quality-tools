@@ -21,10 +21,10 @@ use Symfony\Component\Validator\Exception\ConstraintDefinitionException;
 #[\Attribute(\Attribute::TARGET_PROPERTY | \Attribute::TARGET_METHOD | \Attribute::IS_REPEATABLE)]
 class EmailDomain extends Constraint
 {
-    public $message = 'The domain "{{ value }}" is not allowed.';
-    public $blocked = [];
+    public string $message = 'The domain "{{ value }}" is not allowed.';
+    public mixed $blocked = [];
 
-    public function __construct($options = [])
+    public function __construct(array $options = [])
     {
         parent::__construct($options);
 

@@ -10,7 +10,9 @@ declare(strict_types=1);
 
 namespace App\Tests\PHPUnit\Unit\Trait;
 
+use Symfony\Component\DependencyInjection\Container;
 use Symfony\Component\Validator\ConstraintViolation;
+use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 trait ErrorTrait
 {
@@ -19,7 +21,12 @@ trait ErrorTrait
         $messages = [];
         self::bootKernel();
 
-        $errors = static::getContainer()->get('validator')->validate($object);
+        /** @var Container */
+        $container = static::getContainer();
+
+        /** @var ValidatorInterface */
+        $validator = $container->get('validator');
+        $errors = $validator->validate($object);
 
         /** @var ConstraintViolation $error */
         foreach ($errors as $error) {
