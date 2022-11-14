@@ -16,7 +16,7 @@ use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mime\Email;
 use Symfony\Component\Routing\Annotation\Route;
 
-class EmailController extends AbstractController
+final class EmailController extends AbstractController
 {
     #[Route('/email/send', name: 'app_email_send')]
     public function index(MailerInterface $mailer): Response

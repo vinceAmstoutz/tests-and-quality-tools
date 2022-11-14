@@ -16,7 +16,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
-class FakeSecurityController extends AbstractController
+final class FakeSecurityController extends AbstractController
 {
     #[Route('/auth', name: 'app_auth')]
     #[IsGranted('ROLE_USER')]
