@@ -1,6 +1,7 @@
 [![CI status badge](https://github.com/vinceAmstoutz/tests-and-quality-tools/actions/workflows/ci.yaml/badge.svg?branch=main)](https://github.com/vinceAmstoutz/tests-and-quality-tools/actions/workflows/ci.yml)
 [![PHP lint status badge](https://github.com/vinceAmstoutz/tests-and-quality-tools/actions/workflows/lint.yaml/badge.svg)](https://github.com/vinceAmstoutz/tests-and-quality-tools/actions/workflows/lint.yaml)
 ![Code coverage badge](badge-coverage.svg) 
+[![PHPStan level badge](https://img.shields.io/badge/PHPStan-Level%209-brightgreen.svg?style=flat&logo=php)](./phpstan.neon.dist)
 
 PHP tests & code analysis
 =========================
