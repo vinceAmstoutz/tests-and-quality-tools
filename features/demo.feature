@@ -16,6 +16,7 @@ Feature:
         When I am on the homepage
         Then the response status code should be 200
 
+    @javascript
     Scenario: I can open the homepage in the Browser
         When I am on the homepage
         Then I should see a "body" element
