@@ -18,6 +18,8 @@ use function Symfony\Component\String\u;
 
 /**
  * @implements Rule<Class_>
+ *
+ * @codeCoverageIgnore external rule, see https://www.strangebuzz.com/en/blog/creation-de-regles-phpstan-personnalisees-pour-votre-projet-symfony
  */
 abstract class AbstractControllerRule implements Rule
 {

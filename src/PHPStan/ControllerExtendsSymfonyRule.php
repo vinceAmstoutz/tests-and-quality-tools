@@ -20,6 +20,8 @@ use function Symfony\Component\String\u;
 
 /**
  * @implements Rule<InClassNode>
+ *
+ * @codeCoverageIgnore external rule, see https://www.strangebuzz.com/en/blog/creation-de-regles-phpstan-personnalisees-pour-votre-projet-symfony
  */
 final class ControllerExtendsSymfonyRule implements Rule
 {

@@ -14,6 +14,9 @@ use PhpParser\Node;
 use PhpParser\Node\Stmt\Class_;
 use PHPStan\Analyser\Scope;
 
+/**
+ * @codeCoverageIgnore external rule, see https://www.strangebuzz.com/en/blog/creation-de-regles-phpstan-personnalisees-pour-votre-projet-symfony
+ */
 final class ControllerIsFinalRule extends AbstractControllerRule
 {
     /**
