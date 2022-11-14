@@ -85,10 +85,13 @@ Pro tips
    - The shorter it is, the more the system will be adopted by the stakeholders.
 4. **User focus wording**
    - Understandable by all stakeholders (engineers, managers, UX, UI, PO...)
-   - Short 
+   - Short
    - Check the previous tips!
 5. **Automation-friendly tests**
-   - Use tools like filters o 
+   - Use tools : 
+     - **Hooks** (`@Before`, `@After`, `@Suite`, `@Feature` & `@Scenario`)
+     - **Transform**
+     - **Panther** using [robertfausk/behat-panther-extension](https://github.com/robertfausk/behat-panther-extension)
 
 Credits
 -------
