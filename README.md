@@ -28,7 +28,6 @@ With a blank `Symfony` project to practice them and I take the opportunity to pr
 - `PHPStan 1.8`
 - `Symfony Panther 2.0`
 - `Behat 3.11` (using Symfony's HTTP Client)
-- `PHPSpec` [**planned**]
 - `PHP CS Fixer 3`
 - `nektos/act` (Run GitHub Actions locally)
   
@@ -61,6 +60,7 @@ Behat
 
 PHP CS Fixer
 - https://github.com/FriendsOfPHP/PHP-CS-Fixer
+- https://www.strangebuzz.com/en/blog/initializing-your-symfony-project-with-solid-foundations
 
 Decomplex web tool 
 - :chart: The complexity is measured with two KPI (cyclomatic complexity + cognitive complexity)
