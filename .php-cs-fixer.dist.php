@@ -1,5 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
+/*
+ * (c) Vincent AMSTOUTZ <vincent.amstoutz.dev@gmail.com>
+ *
+ * Unlicensed
+ */
+
 $fileHeaderComment = <<<COMMENT
 (c) Vincent AMSTOUTZ <vincent.amstoutz.dev@gmail.com>
 
@@ -21,15 +29,22 @@ return (new PhpCsFixer\Config())
     ->setRiskyAllowed(true)
     ->setRules([
         '@Symfony' => true,
-        '@Symfony:risky' => true,
-        'header_comment' => ['header' => $fileHeaderComment, 'separate' => 'both'],
+        'yoda_style' => false,
+        'array_syntax' => ['syntax' => 'short'],
+        'declare_strict_types' => true,
+        'header_comment' => [
+            'header' => $fileHeaderComment,
+            'separate' => 'both',
+        ],
         'linebreak_after_opening_tag' => true,
+        'php_unit_fqcn_annotation' => false,
         'mb_str_functions' => true,
         'no_php4_constructor' => true,
         'no_unreachable_default_argument_value' => true,
         'no_useless_else' => true,
         'no_useless_return' => true,
         'php_unit_strict' => true,
+        'no_superfluous_phpdoc_tags' => true,
         'phpdoc_order' => true,
         'strict_comparison' => true,
         'strict_param' => true,
