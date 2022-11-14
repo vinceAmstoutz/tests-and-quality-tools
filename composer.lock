@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "08bad2f8a954e97b8253713a54322f21",
+    "content-hash": "4daee2594553347e892525cf343765ba",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -4933,16 +4933,16 @@
         },
         {
             "name": "symfony/polyfill-intl-grapheme",
-            "version": "v1.26.0",
+            "version": "v1.27.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-intl-grapheme.git",
-                "reference": "433d05519ce6990bf3530fba6957499d327395c2"
+                "reference": "511a08c03c1960e08a883f4cffcacd219b758354"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-intl-grapheme/zipball/433d05519ce6990bf3530fba6957499d327395c2",
-                "reference": "433d05519ce6990bf3530fba6957499d327395c2",
+                "url": "https://api.github.com/repos/symfony/polyfill-intl-grapheme/zipball/511a08c03c1960e08a883f4cffcacd219b758354",
+                "reference": "511a08c03c1960e08a883f4cffcacd219b758354",
                 "shasum": ""
             },
             "require": {
@@ -4954,7 +4954,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "1.26-dev"
+                    "dev-main": "1.27-dev"
                 },
                 "thanks": {
                     "name": "symfony/polyfill",
@@ -4994,7 +4994,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-intl-grapheme/tree/v1.26.0"
+                "source": "https://github.com/symfony/polyfill-intl-grapheme/tree/v1.27.0"
             },
             "funding": [
                 {
@@ -5010,20 +5010,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-05-24T11:49:31+00:00"
+            "time": "2022-11-03T14:55:06+00:00"
         },
         {
             "name": "symfony/polyfill-intl-icu",
-            "version": "v1.26.0",
+            "version": "v1.27.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-intl-icu.git",
-                "reference": "e407643d610e5f2c8a4b14189150f68934bf5e48"
+                "reference": "a3d9148e2c363588e05abbdd4ee4f971f0a5330c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-intl-icu/zipball/e407643d610e5f2c8a4b14189150f68934bf5e48",
-                "reference": "e407643d610e5f2c8a4b14189150f68934bf5e48",
+                "url": "https://api.github.com/repos/symfony/polyfill-intl-icu/zipball/a3d9148e2c363588e05abbdd4ee4f971f0a5330c",
+                "reference": "a3d9148e2c363588e05abbdd4ee4f971f0a5330c",
                 "shasum": ""
             },
             "require": {
@@ -5035,7 +5035,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "1.26-dev"
+                    "dev-main": "1.27-dev"
                 },
                 "thanks": {
                     "name": "symfony/polyfill",
@@ -5081,7 +5081,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-intl-icu/tree/v1.26.0"
+                "source": "https://github.com/symfony/polyfill-intl-icu/tree/v1.27.0"
             },
             "funding": [
                 {
@@ -5097,20 +5097,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-05-24T11:49:31+00:00"
+            "time": "2022-11-03T14:55:06+00:00"
         },
         {
             "name": "symfony/polyfill-intl-idn",
-            "version": "v1.26.0",
+            "version": "v1.27.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-intl-idn.git",
-                "reference": "59a8d271f00dd0e4c2e518104cc7963f655a1aa8"
+                "reference": "639084e360537a19f9ee352433b84ce831f3d2da"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-intl-idn/zipball/59a8d271f00dd0e4c2e518104cc7963f655a1aa8",
-                "reference": "59a8d271f00dd0e4c2e518104cc7963f655a1aa8",
+                "url": "https://api.github.com/repos/symfony/polyfill-intl-idn/zipball/639084e360537a19f9ee352433b84ce831f3d2da",
+                "reference": "639084e360537a19f9ee352433b84ce831f3d2da",
                 "shasum": ""
             },
             "require": {
@@ -5124,7 +5124,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "1.26-dev"
+                    "dev-main": "1.27-dev"
                 },
                 "thanks": {
                     "name": "symfony/polyfill",
@@ -5168,7 +5168,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-intl-idn/tree/v1.26.0"
+                "source": "https://github.com/symfony/polyfill-intl-idn/tree/v1.27.0"
             },
             "funding": [
                 {
@@ -5184,20 +5184,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-05-24T11:49:31+00:00"
+            "time": "2022-11-03T14:55:06+00:00"
         },
         {
             "name": "symfony/polyfill-intl-normalizer",
-            "version": "v1.26.0",
+            "version": "v1.27.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-intl-normalizer.git",
-                "reference": "219aa369ceff116e673852dce47c3a41794c14bd"
+                "reference": "19bd1e4fcd5b91116f14d8533c57831ed00571b6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-intl-normalizer/zipball/219aa369ceff116e673852dce47c3a41794c14bd",
-                "reference": "219aa369ceff116e673852dce47c3a41794c14bd",
+                "url": "https://api.github.com/repos/symfony/polyfill-intl-normalizer/zipball/19bd1e4fcd5b91116f14d8533c57831ed00571b6",
+                "reference": "19bd1e4fcd5b91116f14d8533c57831ed00571b6",
                 "shasum": ""
             },
             "require": {
@@ -5209,7 +5209,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "1.26-dev"
+                    "dev-main": "1.27-dev"
                 },
                 "thanks": {
                     "name": "symfony/polyfill",
@@ -5252,7 +5252,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-intl-normalizer/tree/v1.26.0"
+                "source": "https://github.com/symfony/polyfill-intl-normalizer/tree/v1.27.0"
             },
             "funding": [
                 {
@@ -5268,20 +5268,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-05-24T11:49:31+00:00"
+            "time": "2022-11-03T14:55:06+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",
-            "version": "v1.26.0",
+            "version": "v1.27.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "9344f9cb97f3b19424af1a21a3b0e75b0a7d8d7e"
+                "reference": "8ad114f6b39e2c98a8b0e3bd907732c207c2b534"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/9344f9cb97f3b19424af1a21a3b0e75b0a7d8d7e",
-                "reference": "9344f9cb97f3b19424af1a21a3b0e75b0a7d8d7e",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/8ad114f6b39e2c98a8b0e3bd907732c207c2b534",
+                "reference": "8ad114f6b39e2c98a8b0e3bd907732c207c2b534",
                 "shasum": ""
             },
             "require": {
@@ -5296,7 +5296,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "1.26-dev"
+                    "dev-main": "1.27-dev"
                 },
                 "thanks": {
                     "name": "symfony/polyfill",
@@ -5335,7 +5335,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-mbstring/tree/v1.26.0"
+                "source": "https://github.com/symfony/polyfill-mbstring/tree/v1.27.0"
             },
             "funding": [
                 {
@@ -5351,7 +5351,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-05-24T11:49:31+00:00"
+            "time": "2022-11-03T14:55:06+00:00"
         },
         {
             "name": "symfony/process",
@@ -8568,16 +8568,16 @@
         },
         {
             "name": "nikic/php-parser",
-            "version": "v4.15.1",
+            "version": "v4.15.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "0ef6c55a3f47f89d7a374e6f835197a0b5fcf900"
+                "reference": "f59bbe44bf7d96f24f3e2b4ddc21cd52c1d2adbc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/0ef6c55a3f47f89d7a374e6f835197a0b5fcf900",
-                "reference": "0ef6c55a3f47f89d7a374e6f835197a0b5fcf900",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/f59bbe44bf7d96f24f3e2b4ddc21cd52c1d2adbc",
+                "reference": "f59bbe44bf7d96f24f3e2b4ddc21cd52c1d2adbc",
                 "shasum": ""
             },
             "require": {
@@ -8618,9 +8618,9 @@
             ],
             "support": {
                 "issues": "https://github.com/nikic/PHP-Parser/issues",
-                "source": "https://github.com/nikic/PHP-Parser/tree/v4.15.1"
+                "source": "https://github.com/nikic/PHP-Parser/tree/v4.15.2"
             },
-            "time": "2022-09-04T07:30:47+00:00"
+            "time": "2022-11-12T15:38:23+00:00"
         },
         {
             "name": "phar-io/manifest",
@@ -9391,6 +9391,167 @@
                 }
             ],
             "time": "2022-10-28T06:00:21+00:00"
+        },
+        {
+            "name": "robertfausk/behat-panther-extension",
+            "version": "v1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/robertfausk/behat-panther-extension.git",
+                "reference": "2b0f090a461914eb65bc392bbd73263a2a27dc82"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/robertfausk/behat-panther-extension/zipball/2b0f090a461914eb65bc392bbd73263a2a27dc82",
+                "reference": "2b0f090a461914eb65bc392bbd73263a2a27dc82",
+                "shasum": ""
+            },
+            "require": {
+                "behat/behat": "^3.0.5",
+                "friends-of-behat/mink-extension": "^2.3.0",
+                "php": ">=7.2",
+                "robertfausk/mink-panther-driver": "^1.0",
+                "symfony/config": "^3.4|^4.0|^5.0|^6.0"
+            },
+            "require-dev": {
+                "dbrekelmans/bdi": "^1.0",
+                "g1a/composer-test-scenarios": "^3.0",
+                "matthiasnoback/symfony-config-test": "^4.1",
+                "phpunit/phpunit": "~7.5|~9.3",
+                "roave/security-advisories": "dev-master"
+            },
+            "type": "behat-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "1.1.x-dev"
+                },
+                "scenarios": {
+                    "symfony6": {
+                        "require": {
+                            "symfony/config": "^6.0"
+                        }
+                    },
+                    "symfony5": {
+                        "require": {
+                            "symfony/config": "^5.0"
+                        }
+                    },
+                    "symfony4": {
+                        "require": {
+                            "symfony/config": "^4.0"
+                        }
+                    },
+                    "symfony3": {
+                        "require": {
+                            "symfony/config": "^3.4"
+                        }
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Robertfausk\\Behat\\PantherExtension\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Robert Freigang",
+                    "email": "robertfreigang@gmx.de"
+                }
+            ],
+            "description": "Symfony Panther extension for Behat",
+            "keywords": [
+                "Behat",
+                "Cucumber",
+                "Panther",
+                "browser",
+                "chrome",
+                "firefox",
+                "gherkin",
+                "gui",
+                "symfony",
+                "test",
+                "web"
+            ],
+            "support": {
+                "issues": "https://github.com/robertfausk/behat-panther-extension/issues",
+                "source": "https://github.com/robertfausk/behat-panther-extension/tree/v1.1.1"
+            },
+            "time": "2022-09-17T11:06:40+00:00"
+        },
+        {
+            "name": "robertfausk/mink-panther-driver",
+            "version": "v1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/robertfausk/mink-panther-driver.git",
+                "reference": "2a4067d419655eda0604ac4085916a7c42b3b904"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/robertfausk/mink-panther-driver/zipball/2a4067d419655eda0604ac4085916a7c42b3b904",
+                "reference": "2a4067d419655eda0604ac4085916a7c42b3b904",
+                "shasum": ""
+            },
+            "require": {
+                "behat/mink": "~1.8",
+                "ext-dom": "*",
+                "php": ">=7.2",
+                "symfony/panther": "~0.7|~1.0|~2.0"
+            },
+            "require-dev": {
+                "dbrekelmans/bdi": "^1.0",
+                "mink/driver-testsuite": "dev-master",
+                "phpunit/phpunit": "~8.5|~9.3",
+                "symfony/dom-crawler": "~4.0|~5.0|~6.0",
+                "symfony/http-kernel": "~4.0|~5.0|~6.0"
+            },
+            "suggest": {
+                "ext-gd": "*"
+            },
+            "type": "mink-driver",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Behat\\Mink\\Driver\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Robert Freigang",
+                    "email": "robertfreigang@gmx.de"
+                }
+            ],
+            "description": "Symfony Panther driver for Mink framework",
+            "homepage": "http://mink.behat.org/",
+            "keywords": [
+                "Mink",
+                "Panther",
+                "browser",
+                "chrome",
+                "chromium",
+                "firefox",
+                "headless",
+                "symfony",
+                "testing"
+            ],
+            "support": {
+                "issues": "https://github.com/robertfausk/mink-panther-driver/issues",
+                "source": "https://github.com/robertfausk/mink-panther-driver/tree/v1.1.0"
+            },
+            "time": "2022-07-25T16:04:56+00:00"
         },
         {
             "name": "sebastian/cli-parser",

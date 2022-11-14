@@ -7,8 +7,15 @@ default:
     extensions:
         FriendsOfBehat\SymfonyExtension:
             bootstrap: tests/bootstrap.php
+        Robertfausk\Behat\PantherExtension: ~
         Behat\MinkExtension:
-            base_url: "%env(BASE_URL)%"
-            sessions:
+           javascript_session: javascript
+           sessions:
                 default:
                     symfony: ~
+                javascript:
+                    panther:
+                        manager_options:
+                            chromedriver_arguments:
+                                - --log-path=/var/www/html/chromedriver.log
+                                - --verbose
