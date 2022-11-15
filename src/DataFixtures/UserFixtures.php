@@ -16,15 +16,15 @@ use Doctrine\Persistence\ObjectManager;
 use Faker\Factory as FakerFactory;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
+/**
+ * @codeCoverageIgnore
+ */
 class UserFixtures extends Fixture
 {
     public function __construct(private UserPasswordHasherInterface $passwordHasher)
     {
     }
 
-    /**
-     * @codeCoverageIgnore
-     */
     public function load(ObjectManager $manager): void
     {
         $faker = FakerFactory::create();
