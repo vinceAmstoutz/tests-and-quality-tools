@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1668435943">
-  <project timestamp="1668435943">
+<coverage generated="1668522593">
+  <project timestamp="1668522593">
     <file name="/srv/app/src/Controller/EmailController.php">
       <class name="App\Controller\EmailController" namespace="global">
         <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="6" elements="7" coveredelements="7"/>
@@ -41,9 +41,9 @@
     </file>
     <file name="/srv/app/src/DataFixtures/UserFixtures.php">
       <class name="App\DataFixtures\UserFixtures" namespace="global">
-        <metrics complexity="2" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+        <metrics complexity="4" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
       </class>
-      <metrics loc="38" ncloc="30" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+      <metrics loc="60" ncloc="52" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
     <file name="/srv/app/src/Entity/InvitationCode.php">
       <class name="App\Entity\InvitationCode" namespace="global">
@@ -200,6 +200,6 @@
       <line num="36" type="stmt" count="2"/>
       <metrics loc="39" ncloc="32" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="8" elements="10" coveredelements="10"/>
     </file>
-    <metrics files="16" loc="894" ncloc="670" classes="11" methods="33" coveredmethods="27" conditionals="0" coveredconditionals="0" statements="72" coveredstatements="64" elements="105" coveredelements="91"/>
+    <metrics files="16" loc="916" ncloc="692" classes="11" methods="33" coveredmethods="27" conditionals="0" coveredconditionals="0" statements="72" coveredstatements="64" elements="105" coveredelements="91"/>
   </project>
 </coverage>
