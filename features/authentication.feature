@@ -15,7 +15,6 @@ Feature: Access to the administration panel
         And I press "Sign in"
         And I should see "Invalid credentials."
 
-    @javascript
     Scenario: Logging in with valid credentials
         Given I am on "/login"
         Then I fill in "Email" with "admin@domain.com"
@@ -24,11 +23,7 @@ Feature: Access to the administration panel
         And I should see "Hello admin@domain.com!"
 
     Scenario: Try to logout
-        Given I am on "/login"
-        Then I fill in "Email" with "admin@domain.com"
-        And I fill in "Password" with "not-secured-admin-pass"
-        And I press "Sign in"
-        And I should see "Hello admin@domain.com!"
-        Then I should be redirected to "/auth"
         When I go to "/logout"
         Then I should be redirected to "/"
+        And I go to "/auth"
+        Then I should be redirected to "/login"
