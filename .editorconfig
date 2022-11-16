@@ -43,7 +43,7 @@ indent_style = space
 indent_size = 4
 trim_trailing_whitespace = false
 
-[.github/workflows/*.yml]
+[.github/workflows/*.yaml]
 indent_style = space
 indent_size = 2
 
