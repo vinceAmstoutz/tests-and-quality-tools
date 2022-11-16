@@ -38,7 +38,7 @@ jobs:
       - name: Lint Parameters and Services
         run: docker compose exec -T php bin/console lint:container --no-debug --env=prod
       - name: Lint Doctrine entities
-        run: docker compose exec -T php bin/console doctrine:schema:validate --skip-sync -vvv --no-interaction
+        run: docker compose exec -T php bin/console doctrine:schema:validate --skip-sync -vvv --no-interaction --env=prod
       - name: Lint Composer config
         run: docker compose exec -T php composer validate --strict
       - name: Check if any dependencies are compromised
