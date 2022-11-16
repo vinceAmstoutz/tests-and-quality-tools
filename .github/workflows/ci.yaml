@@ -41,7 +41,7 @@ jobs:
             - name: Doctrine Schema Validator
               run: docker compose exec -T php bin/console doctrine:schema:validate --skip-sync
             - name: PHPUnit
-              run: docker compose exec -T php env XDEBUG_MODE=coverage env MEMORY_LIMIT=-1 env XDEBUG_ENABLE=1 bin/phpunit
+              run: docker compose exec -T php env XDEBUG_MODE=coverage env MEMORY_LIMIT=-1 env XDEBUG_ENABLE=1 bin/phpunit --coverage-clover=clover.xml
             - name: Behat
               run: docker compose exec -T -e APP_ENV=test php ./vendor/bin/behat
             - name: Codecov
