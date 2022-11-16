@@ -1,4 +1,5 @@
 {
+    "name": "vinceamstoutz/tests-and-quality-tools",
     "type": "project",
     "description": "Practice of TDD (PHPUnit), BDD (Behat) and code analysis (PHPStan & PHP CS Fixer).",
     "license": "proprietary",
