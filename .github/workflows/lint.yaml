@@ -32,11 +32,11 @@ jobs:
       - name: Start services
         run: docker compose up --build -d
       - name: Lint YAML files
-        run: docker compose exec -T php bin/console -e test lint:yaml config --parse-tags
+        run: docker compose exec -T php bin/console lint:yaml config/ src/ --parse-tags
       - name: Lint Twig templates
-        run: docker compose exec -T php bin/console -e test lint:twig templates --env=prod
+        run: docker compose exec -T php bin/console lint:twig /templates --env=prod
       - name: Lint Parameters and Services
-        run: docker compose exec -T php bin/console -e test lint:container --no-debug
+        run: docker compose exec -T php bin/console lint:container --no-debug
       - name: Lint Doctrine entities
         run: docker compose exec -T php bin/console doctrine:schema:validate --skip-sync -vvv --no-interaction
       - name: Lint Composer config
