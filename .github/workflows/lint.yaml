@@ -1,23 +1,49 @@
 name: Lint
 
 on:
-    push:
-    pull_request:
+  push:
+  pull_request:
 
 env:
-    fail-fast: true
+  fail-fast: true
 
 permissions:
-    contents: read
+  contents: read
 
 jobs:
-    php-cs-fixer:
-          name: PHP-CS-Fixer
-          runs-on: ubuntu-latest
-          steps:
-              - name: Checkout
-                uses: actions/checkout@v3
-              - name: PHP-CS-Fixer
-                uses: docker://oskarstark/php-cs-fixer-ga
-                with:
-                    args: --diff --dry-run
+  php-cs-fixer:
+    name: PHP-CS-Fixer
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: PHP-CS-Fixer
+        uses: docker://oskarstark/php-cs-fixer-ga
+        with:
+          args: --diff --dry-run
+  linters:
+    name: Linters
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Pull images
+        run: docker compose pull
+      - name: Start services
+        run: docker compose up --build -d
+      - name: Lint YAML files
+        run: docker compose exec -T php bin/console lint:yaml config --parse-tags
+      - name: Lint Twig templates
+        run: docker compose exec -T php bin/console lint:twig templates --env=prod
+      - name: Lint Parameters and Services
+        run: docker compose exec -T php bin/console lint:container --no-debug
+      - name: Lint Doctrine entities
+        run: docker compose exec -T php bin/console doctrine:schema:validate --skip-sync -vvv --no-interaction
+      - name: Lint Composer config
+        run: docker compose exec -T php composer validate --strict
+      - name: Check if any dependencies are compromised
+        run: docker compose exec -T php composer audit
+      - name: Run PHPStan
+        run: docker compose exec -T php ./vendor/bin/phpstan analyze
+      - name: Codecov
+        uses: codecov/codecov-action@v3.1.1
