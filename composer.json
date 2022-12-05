@@ -121,6 +121,6 @@
         "symfony/phpunit-bridge": "^6.2",
         "symfony/stopwatch": "6.2.*",
         "symfony/web-profiler-bundle": "6.2.*",
-        "theofidry/alicme-data-fixtures": "^1.6"
+        "theofidry/alice-data-fixtures": "^1.6"
     }
 }
