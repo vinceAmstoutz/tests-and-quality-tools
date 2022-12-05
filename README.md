@@ -21,7 +21,7 @@ With a blank `Symfony` project to practice them and I take the opportunity to pr
 
 :shield: Dev Env
 --------
-- `Symfony 6.1` (traditional web app skeleton)
+- `Symfony 6.2` (traditional web app skeleton)
 - `PHP 8.1`
 - `Docker` 
 - `PHPUnit 9.5`
