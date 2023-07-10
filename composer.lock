@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "026efa088158b25366a1d2a519f8834d",
+    "content-hash": "b5c4bcee1e65bee04a0504d1c093942d",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -7232,16 +7232,16 @@
         },
         {
             "name": "symfony/web-link",
-            "version": "v6.2.7",
+            "version": "v6.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/web-link.git",
-                "reference": "410aac2034608ac661cdca1968e3c56d4164abc8"
+                "reference": "0989ca617d0703cdca501a245f10e194ff22315b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/web-link/zipball/410aac2034608ac661cdca1968e3c56d4164abc8",
-                "reference": "410aac2034608ac661cdca1968e3c56d4164abc8",
+                "url": "https://api.github.com/repos/symfony/web-link/zipball/0989ca617d0703cdca501a245f10e194ff22315b",
+                "reference": "0989ca617d0703cdca501a245f10e194ff22315b",
                 "shasum": ""
             },
             "require": {
@@ -7256,9 +7256,6 @@
             },
             "require-dev": {
                 "symfony/http-kernel": "^5.4|^6.0"
-            },
-            "suggest": {
-                "symfony/http-kernel": ""
             },
             "type": "library",
             "autoload": {
@@ -7298,7 +7295,7 @@
                 "push"
             ],
             "support": {
-                "source": "https://github.com/symfony/web-link/tree/v6.2.7"
+                "source": "https://github.com/symfony/web-link/tree/v6.3.0"
             },
             "funding": [
                 {
@@ -7314,7 +7311,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-02-14T08:44:56+00:00"
+            "time": "2023-04-21T14:41:17+00:00"
         },
         {
             "name": "symfony/yaml",
