@@ -120,7 +120,7 @@
         "symfony/panther": "^2.0",
         "symfony/phpunit-bridge": "^6.2",
         "symfony/stopwatch": "6.2.*",
-        "symfony/web-profiler-bundle": "6.2.*",
+        "symfony/web-profiler-bundle": "6.3.*",
         "theofidry/alice-data-fixtures": "^1.6"
     }
 }
