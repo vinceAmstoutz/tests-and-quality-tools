@@ -101,7 +101,7 @@
         }
     },
     "require-dev": {
-        "dama/doctrine-test-bundle": "^7.1",
+        "dama/doctrine-test-bundle": "^8.0",
         "dbrekelmans/bdi": "^1.0",
         "doctrine/doctrine-fixtures-bundle": "^3.4",
         "friends-of-behat/mink-browserkit-driver": "^1.6",
