@@ -46,4 +46,4 @@ jobs:
       - name: Run PHPStan
         run: docker compose exec -T php ./vendor/bin/phpstan analyze
       - name: Codecov
-        uses: codecov/codecov-action@v3.1.5
+        uses: codecov/codecov-action@v4.0.2
